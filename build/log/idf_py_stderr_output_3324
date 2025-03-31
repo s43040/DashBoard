@@ -1,0 +1,277 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM5 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM5 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42042f55: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 2)
+[0m
+[0;33m--- 0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m--- 0x42042f52: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:89 (discriminator 3)
+0x42009ea9: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x42009f92: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42017151: lv_disp_drv_update at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:268
+0x42017206: lv_disp_set_rotation at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:570
+0x42009626: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:32
+0x42046ceb: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0m

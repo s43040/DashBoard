@@ -1,0 +1,561 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3820,len:0x19fc
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xe8c
+load:0x403cc700,len:0x313c
+entry 0x403c9940
+[0;32mI (27) boot: ESP-IDF v5.2.3-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar  5 2025 15:20:07[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot: efuse block revision: v1.3[0m
+[0;32mI (39) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (49) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (54) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (58) boot: Enabling RNG early entropy source...[0m
+[0;32mI (64) boot: Partition Table:[0m
+[0;32mI (67) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (75) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (82) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (89) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (97) boot: End of partition table[0m
+[0;32mI (101) esp_image: segment 0: paddr=00010020 vaddr=3c050020 size=608a4h (395428) map[0m
+[0;32mI (168) esp_image: segment 1: paddr=000708cc vaddr=3fc9a800 size=031a4h ( 12708) load[0m
+[0;32mI (171) esp_image: segment 2: paddr=00073a78 vaddr=40374000 size=0c5a0h ( 50592) load[0m
+[0;32mI (184) esp_image: segment 3: paddr=00080020 vaddr=42000020 size=4cf70h (315248) map[0m
+[0;32mI (231) esp_image: segment 4: paddr=000ccf98 vaddr=403805a0 size=0a194h ( 41364) load[0m
+[0;32mI (248) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (248) boot: Disabling RNG early entropy source...[0m
+[0;32mI (259) cpu_start: Multicore app[0m
+[0;32mI (260) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (260) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (263) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (268) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (274) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (279) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (284) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (290) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (296) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (301) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (307) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (313) MSPI Timing: PSRAM timing tuning index: 4[0m
+[0;32mI (318) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (323) esp_psram: Speed: 80MHz[0m
+[0;32mI (352) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (653) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (661) cpu_start: Pro cpu start user code[0m
+[0;32mI (661) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (662) cpu_start: Application information:[0m
+[0;32mI (664) cpu_start: Project name:     lvgl_porting[0m
+[0;32mI (670) cpu_start: App version:      v5.2.3-dirty[0m
+[0;32mI (675) cpu_start: Compile time:     Mar  5 2025 15:19:46[0m
+[0;32mI (681) cpu_start: ELF file SHA256:  abbd3aee5...[0m
+[0;32mI (687) cpu_start: ESP-IDF:          v5.2.3-dirty[0m
+[0;32mI (692) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (697) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (702) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (706) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (714) heap_init: At 3FC9E9A8 len 0004AD68 (299 KiB): RAM[0m
+[0;32mI (720) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (726) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (732) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (738) esp_psram: Adding pool of 7744K of PSRAM memory to heap allocator[0m
+[0;32mI (746) spi_flash: detected chip: gd[0m
+[0;32mI (750) spi_flash: flash io: qio[0m
+[0;33mW (754) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (765) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (771) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (779) main_task: Started on CPU0[0m
+[0;32mI (783) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (792) main_task: Calling app_main()[0m
+[0;32mI (796) example: Install RGB LCD panel driver[0m
+[0;32mI (849) example: Initialize RGB LCD panel[0m
+[0;32mI (850) example: Initialize I2C bus[0m
+[0;32mI (851) example: Initialize GPIO[0m
+[0;32mI (851) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (860) example: Initialize Touch LCD[0m
+[0;32mI (1265) example: Initialize I2C panel IO[0m
+[0;32mI (1265) example: Initialize touch controller GT911[0m
+[0;33mW (1265) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1270) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1275) GT911: TouchPad_Config_Version:88[0m
+[0;32mI (1282) lv_port: Create LVGL task[0m
+[0;32mI (1284) example: Display LVGL demos[0m
+[Warn]	(0.128, +128)	 lv_palette_main: Invalid palette: 255 	(in lv_color.c line #285)
+[Warn]	(0.154, +26)	 lv_palette_main: Invalid palette: 255 	(in lv_color.c line #285)
+[0;32mI (1455) gpio: GPIO[19]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1456) gpio: GPIO[20]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1463) CAN: Driver initialized
+ [0m
+[0;32mI (1467) CAN: Driver started
+ [0m
+[0;32mI (166737) CAN: hello recieved something 3,30[0m
+madeit
+[Error]	(165.458, +165304)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(165.462, +4)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(165.470, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(165.480, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(165.488, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(165.498, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(165.508, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(165.518, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(165.526, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(165.534, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(165.544, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(165.554, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(165.562, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(165.940, +378)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(165.942, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(165.948, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[0;32mI (167394) CAN: hello recieved something 3,30[0m
+madeit
+12291  50  3
+[Error]	(166.206, +258)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(166.208, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(166.466, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(166.716, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(166.718, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(166.976, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(167.226, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(167.228, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(167.486, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(167.736, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(167.738, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(167.996, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(168.246, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(168.248, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(168.506, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(168.756, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(168.758, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(169.016, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(169.266, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(169.268, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(169.526, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(169.526, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(169.532, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(170.042, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(170.042, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(170.048, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Error]	(170.308, +260)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(170.308, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(170.566, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(170.818, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(170.818, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(171.076, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(171.078, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(171.084, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Error]	(171.342, +258)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(171.344, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(171.602, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(172.102, +500)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(172.102, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(172.108, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(172.618, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(172.870, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(172.870, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(173.128, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(173.630, +502)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(173.630, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(173.636, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(174.146, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(174.396, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(174.398, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(174.656, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(174.656, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(174.662, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(175.172, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(175.172, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(175.178, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(175.688, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(175.688, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(175.694, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(176.204, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(176.454, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(176.456, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(176.714, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(176.714, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(176.720, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(177.230, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(177.230, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(177.236, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(177.746, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(177.996, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(177.998, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(178.256, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(178.756, +500)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(178.758, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(178.762, +4)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(179.272, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(179.524, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(179.524, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(179.782, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(180.284, +502)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(180.284, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(180.290, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Error]	(180.550, +260)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(180.550, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(180.808, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(181.308, +500)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(181.308, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(181.314, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Error]	(181.574, +260)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(181.576, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(181.834, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(182.084, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(182.084, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(182.342, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(182.844, +502)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(182.844, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(182.850, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Error]	(183.110, +260)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(183.110, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(183.368, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(183.618, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(183.620, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(183.878, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(184.378, +500)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(184.378, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(184.384, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Error]	(184.644, +260)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(184.646, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(184.904, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(185.154, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(185.154, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(185.412, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(185.914, +502)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(185.914, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(185.920, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Error]	(186.180, +260)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(186.180, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(186.438, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(186.690, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(186.690, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(186.948, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(187.450, +502)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(187.450, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(187.456, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(187.966, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(188.216, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(188.218, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(188.476, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(188.476, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(188.482, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(188.992, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(188.992, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(188.998, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(189.508, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(189.758, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(189.760, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(190.018, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(190.518, +500)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(190.520, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(190.524, +4)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(191.034, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(191.286, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(191.286, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(191.544, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(191.546, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(191.550, +4)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(192.060, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(192.062, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(192.066, +4)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(192.576, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(192.828, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(192.828, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(193.086, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(193.086, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(193.092, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(193.602, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(193.854, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(193.854, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(194.112, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(194.112, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(194.118, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(194.628, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(194.630, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(194.634, +4)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(195.144, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(195.396, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(195.396, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(195.654, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(196.156, +502)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(196.156, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(196.162, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(196.672, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(196.922, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(196.924, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(197.182, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(197.182, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(197.188, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(197.698, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(197.698, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(197.704, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(198.214, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(198.214, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(198.220, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(198.730, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(198.980, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(198.982, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(199.240, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(199.740, +500)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(199.740, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(199.746, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Error]	(200.006, +260)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(200.008, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(200.266, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(200.516, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(200.516, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(200.774, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(201.026, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(201.026, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(201.284, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(201.536, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(201.536, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(201.794, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(202.046, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(202.046, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(202.304, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(202.556, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(202.556, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(202.814, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(203.066, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(203.066, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(203.324, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(203.576, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(203.576, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(203.834, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(204.086, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(204.086, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(204.344, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(204.596, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(204.596, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(204.854, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(205.106, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(205.106, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(205.364, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(205.614, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(205.616, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(205.874, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(206.124, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(206.126, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(206.384, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(206.884, +500)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(206.884, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(206.890, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Error]	(207.150, +260)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(207.152, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(207.410, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(207.660, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(207.660, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(207.918, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(208.420, +502)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(208.420, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(208.426, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Error]	(208.686, +260)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(208.686, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(208.944, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(209.194, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(209.196, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(209.454, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(209.704, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(209.706, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(209.964, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(210.214, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(210.216, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(210.474, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(210.724, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(210.726, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(210.984, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(211.484, +500)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(211.484, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(211.490, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(212.000, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(212.250, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(212.252, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(212.510, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(212.510, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(212.516, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(213.026, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(213.026, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(213.032, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Warn]	(213.542, +510)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(213.792, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(213.794, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(214.052, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(214.552, +500)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(214.552, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(214.558, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Error]	(214.818, +260)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(214.818, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(215.076, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(215.326, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(215.328, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(215.586, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(215.836, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(215.838, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(216.096, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(216.346, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(216.348, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(216.606, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(216.856, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(216.858, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(217.116, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(217.366, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(217.368, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(217.626, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(217.876, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(217.878, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(218.136, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(218.386, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(218.388, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(218.646, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(218.896, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(218.898, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(219.156, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(219.406, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(219.408, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(219.666, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(219.916, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(219.918, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(220.176, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(220.426, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(220.428, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(220.686, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Warn]	(221.186, +500)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Error]	(221.188, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(221.192, +4)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+12291  50  3
+[Error]	(221.452, +260)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(221.454, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(221.712, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(221.962, +250)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(221.962, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(222.220, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(222.472, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(222.472, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(222.730, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(222.982, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(222.982, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(223.240, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(223.492, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(223.492, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(223.750, +258)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+12291  50  3
+[Error]	(224.002, +252)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(224.002, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)

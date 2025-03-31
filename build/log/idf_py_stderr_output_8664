@@ -1,0 +1,18 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM5 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM5 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x42037cff: task_wdt_timeout_handling at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/task_wdt/task_wdt.c:441
+0x4203811c: task_wdt_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/task_wdt/task_wdt.c:515
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4200ef4f: lv_area_copy at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_area.h:112
+ (inlined by) lv_obj_area_is_visible at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_pos.c:883
+0x4200f02d: lv_obj_invalidate_area at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_pos.c:843
+0x4200f089: lv_obj_invalidate at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_pos.c:861
+0x42011d1e: lv_obj_refresh_style at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:173
+0x42011fd9: lv_obj_set_local_style_prop at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:275
+0x42012543: lv_obj_set_style_bg_color at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style_gen.c:192
+0x42009fad: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:205 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0m

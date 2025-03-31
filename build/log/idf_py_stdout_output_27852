@@ -1,0 +1,437 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3820,len:0x19fc
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xe8c
+load:0x403cc700,len:0x313c
+entry 0x403c9940
+[0;32mI (27) boot: ESP-IDF v5.2.3-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar  5 2025 15:20:07[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot: efuse block revision: v1.3[0m
+[0;32mI (39) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (49) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (54) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (58) boot: Enabling RNG early entropy source...[0m
+[0;32mI (64) boot: Partition Table:[0m
+[0;32mI (67) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (75) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (82) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (89) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (97) boot: End of partition table[0m
+[0;32mI (101) esp_image: segment 0: paddr=00010020 vaddr=3c050020 size=60864h (395364) map[0m
+[0;32mI (168) esp_image: segment 1: paddr=0007088c vaddr=3fc9a800 size=031a4h ( 12708) load[0m
+[0;32mI (171) esp_image: segment 2: paddr=00073a38 vaddr=40374000 size=0c5e0h ( 50656) load[0m
+[0;32mI (184) esp_image: segment 3: paddr=00080020 vaddr=42000020 size=4d170h (315760) map[0m
+[0;32mI (231) esp_image: segment 4: paddr=000cd198 vaddr=403805e0 size=0a154h ( 41300) load[0m
+[0;32mI (248) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (248) boot: Disabling RNG early entropy source...[0m
+[0;32mI (259) cpu_start: Multicore app[0m
+[0;32mI (260) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (260) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (263) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (269) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (274) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (279) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (284) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (290) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (296) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (301) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (307) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (313) MSPI Timing: PSRAM timing tuning index: 4[0m
+[0;32mI (318) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (323) esp_psram: Speed: 80MHz[0m
+[0;32mI (352) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (653) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (661) cpu_start: Pro cpu start user code[0m
+[0;32mI (661) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (662) cpu_start: Application information:[0m
+[0;32mI (665) cpu_start: Project name:     lvgl_porting[0m
+[0;32mI (670) cpu_start: App version:      v5.2.3-dirty[0m
+[0;32mI (675) cpu_start: Compile time:     Mar  5 2025 15:19:46[0m
+[0;32mI (681) cpu_start: ELF file SHA256:  7ee136236...[0m
+[0;32mI (687) cpu_start: ESP-IDF:          v5.2.3-dirty[0m
+[0;32mI (692) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (697) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (702) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (706) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (714) heap_init: At 3FC9E9B8 len 0004AD58 (299 KiB): RAM[0m
+[0;32mI (720) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (726) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (732) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (738) esp_psram: Adding pool of 7744K of PSRAM memory to heap allocator[0m
+[0;32mI (746) spi_flash: detected chip: gd[0m
+[0;32mI (750) spi_flash: flash io: qio[0m
+[0;33mW (754) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (765) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (771) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (779) main_task: Started on CPU0[0m
+[0;32mI (783) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (792) main_task: Calling app_main()[0m
+[0;32mI (796) example: Install RGB LCD panel driver[0m
+[0;32mI (849) example: Initialize RGB LCD panel[0m
+[0;32mI (850) example: Initialize I2C bus[0m
+[0;32mI (851) example: Initialize GPIO[0m
+[0;32mI (851) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (860) example: Initialize Touch LCD[0m
+[0;32mI (1265) example: Initialize I2C panel IO[0m
+[0;32mI (1265) example: Initialize touch controller GT911[0m
+[0;33mW (1265) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1270) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1275) GT911: TouchPad_Config_Version:88[0m
+[0;32mI (1282) lv_port: Create LVGL task[0m
+[0;32mI (1284) example: Display LVGL demos[0m
+[Warn]	(0.128, +128)	 lv_palette_main: Invalid palette: 255 	(in lv_color.c line #285)
+[Warn]	(0.154, +26)	 lv_palette_main: Invalid palette: 255 	(in lv_color.c line #285)
+[0;32mI (1457) gpio: GPIO[19]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1459) gpio: GPIO[20]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (1466) CAN: Driver initialized
+ [0m
+[0;32mI (1470) CAN: Driver started
+ [0m
+[Error]	(4.194, +4040)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.194, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.202, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.210, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.254, +44)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.256, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.262, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.270, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.280, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.418, +138)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.420, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.426, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.434, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.518, +84)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.520, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.528, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.536, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.546, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.554, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.562, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.572, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.580, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.590, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.598, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.608, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.644, +36)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.644, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.650, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.660, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.868, +208)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.870, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.876, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.884, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.970, +86)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.970, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.976, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.986, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(4.994, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.006, +12)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.012, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.094, +82)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.094, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.100, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.110, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.188, +78)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.188, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.196, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.204, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.318, +114)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.320, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.326, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.334, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.424, +90)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.424, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.432, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.442, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.450, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.460, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.468, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.476, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.486, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.494, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.504, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.512, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.638, +126)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.640, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.646, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.656, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.664, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.674, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.682, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.690, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.700, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.708, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.718, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.726, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.854, +128)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.856, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.862, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.872, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.880, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.890, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.944, +54)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.944, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.950, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(5.960, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.090, +130)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.090, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.098, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.128, +30)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.128, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.136, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.144, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.154, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.162, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.168, +14)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.170, +8)	 _lv_inv_area: [Error]	(6.180, +12)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.192, +12)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.206, +14)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.382, +176)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.382, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.412, +30)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.422, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.430, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(6.438, +8)	 lv_palette_main: Invalid palette: 255 	(in lv_color.c line #285)
+[Error]	(6.446, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.454, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.464, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.598, +134)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.600, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.606, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.614, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.624, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.818, +194)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.822, +4)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.834, +12)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.836, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.844, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.854, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.864, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.872, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.882, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.890, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.898, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(6.908, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(7.706, +798)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(7.706, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(7.712, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(7.722, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(7.730, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(7.740, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(7.748, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(7.758, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(7.766, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(7.776, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(7.784, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(7.794, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(15.970, +8176)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(15.980, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(15.986, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(15.996, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(16.204, +208)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(16.206, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(16.212, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(16.222, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(17.022, +800)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(17.028, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(17.038, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(17.048, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(17.456, +408)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(17.456, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(17.464, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(17.474, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(18.082, +608)	 lv_palette_main: Invalid palette: 255 	(in lv_color.c line #285)
+[Error]	(19.488, +1406)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.498, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.506, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.510, +4)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.518, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.528, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.536, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.546, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.554, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.564, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.572, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.582, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.882, +300)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.890, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.898, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.906, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.916, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.926, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.934, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.944, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.952, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.962, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.970, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(19.980, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(20.300, +320)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(20.302, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(20.308, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(20.318, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(20.326, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(20.336, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(20.344, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(20.354, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(20.362, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(20.372, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(20.382, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(20.390, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.406, +4016)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.406, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.414, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.422, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.432, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.440, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.584, +144)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.584, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.592, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.600, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.602, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.618, +16)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.628, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.778, +150)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.778, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.810, +32)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.810, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.818, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(24.826, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.036, +210)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.036, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.044, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.052, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.166, +114)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.168, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.174, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.184, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.192, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.262, +70)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.262, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.270, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.278, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.340, +62)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.342, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.348, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.358, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.366, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.488, +122)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.488, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.496, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.504, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.542, +38)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.542, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.550, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.742, +192)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.744, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.750, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.760, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.768, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.778, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.788, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.796, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.806, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.814, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.824, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.832, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.914, +82)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.914, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.922, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.930, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.956, +26)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.958, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.966, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.974, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.982, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(25.992, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.002, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.010, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.020, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.028, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.038, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.140, +102)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.140, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.148, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.156, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.300, +144)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.302, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.308, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.316, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.326, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.336, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.344, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.354, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.362, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.366, +12)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.372, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.380, +14)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.390, +18)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.398, +18)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.408, +18)	 _lv_inv_area: [Error]	(26.416, +18)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.468, +60)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.468, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.474, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.628, +154)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.628, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.636, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.644, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.656, +12)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.664, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.672, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.682, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.690, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.838, +148)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.838, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.846, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.854, +16)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.854, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(26.864, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Warn]	(26.882, +18)	 lv_palette_main: Invalid palette: 255 	(in lv_color.c line #285)
+[Error]	(27.434, +552)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.436, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.442, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.452, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.460, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.470, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.478, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.488, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.496, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.506, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.514, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.524, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.780, +256)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.780, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.788, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.796, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.806, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.816, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.974, +158)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.976, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(27.982, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.164, +182)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.168, +4)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.178, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.184, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.192, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.202, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.210, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.220, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.230, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.238, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.248, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.256, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.548, +292)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.550, +2)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.556, +6)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.566, +10)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.720, +154)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.720, +0)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)
+[Error]	(28.728, +8)	 _lv_inv_area: detected modifying dirty areas in render 	(in lv_refr.c line #212)

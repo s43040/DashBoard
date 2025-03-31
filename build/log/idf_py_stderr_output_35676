@@ -1,0 +1,165 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM5 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM5 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x42019818: lv_style_get_prop_inlined at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_style.h:474
+[0m
+[0;33m--- 0x4201710c: lv_disp_drv_init at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:94
+[0m
+[0;33m--- 0x4201710c: lv_disp_drv_init at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:94
+[0m
+[0;33m--- 0x42017004: lv_font_get_glyph_dsc_fmt_txt at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/font/lv_font_fmt_txt.c:150
+[0m
+[0;33m--- 0x4201710c: lv_disp_drv_init at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:94
+0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x42019815: lv_style_get_prop_inlined at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_style.h:474
+0x42019891: lv_style_get_prop at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_style.c:295
+0x42010fd6: get_prop_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:644
+0x4201103a: lv_obj_get_style_prop at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:229
+0x4201b642: lv_obj_get_style_width at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style_gen.h:3
+ (inlined by) lv_label_refr_text at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/widgets/lv_label.c:913
+0x4201c1d2: lv_label_event at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/widgets/lv_label.c:749
+0x420431ed: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:96
+0x4200a1c1: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x4200a2aa: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42011370: lv_obj_refresh_style at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:187
+0x420114e1: lv_obj_add_style at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:103
+0x42009a3b: create_counter at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:46
+0x42009b58: setUpFields at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:16
+0x42009669: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:37
+0x42046f6f: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42019818: lv_style_get_prop_inlined at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_style.h:474
+[0m
+[0;33m--- 0x4201710c: lv_disp_drv_init at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:94
+[0m
+[0;33m--- 0x4201710c: lv_disp_drv_init at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:94
+[0m
+[0;33m--- 0x42017004: lv_font_get_glyph_dsc_fmt_txt at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/font/lv_font_fmt_txt.c:150
+[0m
+[0;33m--- 0x4201710c: lv_disp_drv_init at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:94
+0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x42019815: lv_style_get_prop_inlined at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_style.h:474
+0x42019891: lv_style_get_prop at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_style.c:295
+0x42010fd6: get_prop_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:644
+0x4201103a: lv_obj_get_style_prop at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:229
+0x4201b642: lv_obj_get_style_width at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style_gen.h:3
+ (inlined by) lv_label_refr_text at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/widgets/lv_label.c:913
+0x4201c1d2: lv_label_event at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/widgets/lv_label.c:749
+0x420431ed: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:96
+0x4200a1c1: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x4200a2aa: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42011370: lv_obj_refresh_style at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:187
+0x420114e1: lv_obj_add_style at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:103
+0x42009a3b: create_counter at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:46
+0x42009b58: setUpFields at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:16
+0x42009669: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:37
+0x42046f6f: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42019818: lv_style_get_prop_inlined at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_style.h:474
+[0m
+[0;33m--- 0x4201710c: lv_disp_drv_init at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:94
+[0m
+[0;33m--- 0x4201710c: lv_disp_drv_init at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:94
+[0m
+[0;33m--- 0x42017004: lv_font_get_glyph_dsc_fmt_txt at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/font/lv_font_fmt_txt.c:150
+[0m
+[0;33m--- 0x4201710c: lv_disp_drv_init at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:94
+0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x42019815: lv_style_get_prop_inlined at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_style.h:474
+0x42019891: lv_style_get_prop at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_style.c:295
+0x42010fd6: get_prop_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:644
+0x4201103a: lv_obj_get_style_prop at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:229
+0x4201b642: lv_obj_get_style_width at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style_gen.h:3
+ (inlined by) lv_label_refr_text at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/widgets/lv_label.c:913
+0x4201c1d2: lv_label_event at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/widgets/lv_label.c:749
+0x420431ed: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:96
+0x4200a1c1: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x4200a2aa: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42011370: lv_obj_refresh_style at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:187
+0x420114e1: lv_obj_add_style at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:103
+0x42009a3b: create_counter at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:46
+0x42009b58: setUpFields at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:16
+0x42009669: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:37
+0x42046f6f: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42019818: lv_style_get_prop_inlined at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_style.h:474
+[0m
+[0;33m--- 0x4201710c: lv_disp_drv_init at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:94
+[0m
+[0;33m--- 0x4201710c: lv_disp_drv_init at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:94
+[0m
+[0;33m--- 0x42017004: lv_font_get_glyph_dsc_fmt_txt at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/font/lv_font_fmt_txt.c:150
+[0m
+[0;33m--- 0x4201710c: lv_disp_drv_init at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:94
+0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x42019815: lv_style_get_prop_inlined at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_style.h:474
+0x42019891: lv_style_get_prop at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_style.c:295
+0x42010fd6: get_prop_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:644
+0x4201103a: lv_obj_get_style_prop at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:229
+0x4201b642: lv_obj_get_style_width at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style_gen.h:3
+ (inlined by) lv_label_refr_text at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/widgets/lv_label.c:913
+0x4201c1d2: lv_label_event at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/widgets/lv_label.c:749
+0x420431ed: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:96
+0x4200a1c1: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x4200a2aa: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42011370: lv_obj_refresh_style at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:187
+0x420114e1: lv_obj_add_style at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:103
+0x42009a3b: create_counter at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:46
+0x42009b58: setUpFields at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:16
+0x42009669: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:37
+0x42046f6f: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x42019818: lv_style_get_prop_inlined at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_style.h:474
+[0m
+[0;33m--- 0x4201710c: lv_disp_drv_init at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:94
+[0m
+[0;33m--- 0x4201710c: lv_disp_drv_init at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:94
+[0m
+[0;33m--- 0x42017004: lv_font_get_glyph_dsc_fmt_txt at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/font/lv_font_fmt_txt.c:150
+[0m
+[0;33m--- 0x4201710c: lv_disp_drv_init at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/hal/lv_hal_disp.c:94
+0x400570e8: memset in ROM
+0x400570f3: memset in ROM
+[0m
+[0;33m--- 0x42019815: lv_style_get_prop_inlined at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_style.h:474
+0x42019891: lv_style_get_prop at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_style.c:295
+0x42010fd6: get_prop_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:644
+0x4201103a: lv_obj_get_style_prop at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:229
+0x4201b642: lv_obj_get_style_width at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style_gen.h:3
+ (inlined by) lv_label_refr_text at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/widgets/lv_label.c:913
+0x4201c1d2: lv_label_event at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/widgets/lv_label.c:749
+0x420431ed: lv_obj_event_base at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:96
+0x4200a1c1: event_send_core at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:452
+0x4200a2aa: lv_event_send at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_event.c:74
+0x42011370: lv_obj_refresh_style at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:187
+0x420114e1: lv_obj_add_style at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_obj_style.c:103
+0x42009a3b: create_counter at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:46
+0x42009b58: setUpFields at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:16
+0x42009669: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:37
+0x42046f6f: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x40382345: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d84: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0m

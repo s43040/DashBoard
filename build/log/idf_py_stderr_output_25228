@@ -1,0 +1,38 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM5 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM5 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x4037d6d6: esp_crosscore_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/crosscore_int.c:103
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x42013575: refr_area_part at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_refr.c:708 (discriminator 1)
+0x420137cd: refr_area at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_refr.c:649
+0x42013990: refr_invalid_areas at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_refr.c:616
+0x42013b56: _lv_disp_refr_timer at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_refr.c:324
+0x4201aaa1: lv_timer_exec at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_timer.c:313 (discriminator 2)
+0x4201ab5b: lv_timer_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_timer.c:109
+0x42009e52: lvgl_port_task at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/lvgl_port.c:493
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x4037d6d6: esp_crosscore_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/crosscore_int.c:103
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x42013575: refr_area_part at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_refr.c:708 (discriminator 1)
+0x420137cd: refr_area at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_refr.c:649
+0x42013990: refr_invalid_areas at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_refr.c:616
+0x42013b56: _lv_disp_refr_timer at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_refr.c:324
+0x4201aaa1: lv_timer_exec at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_timer.c:313 (discriminator 2)
+0x4201ab5b: lv_timer_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_timer.c:109
+0x42009e52: lvgl_port_task at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/lvgl_port.c:493
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x4037d6d6: esp_crosscore_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/crosscore_int.c:103
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x42013575: refr_area_part at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_refr.c:708 (discriminator 1)
+0x420137cd: refr_area at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_refr.c:649
+0x42013990: refr_invalid_areas at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_refr.c:616
+0x42013b56: _lv_disp_refr_timer at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/core/lv_refr.c:324
+0x4201aaa1: lv_timer_exec at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_timer.c:313 (discriminator 2)
+0x4201ab5b: lv_timer_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/lvgl__lvgl/src/misc/lv_timer.c:109
+0x42009e52: lvgl_port_task at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/lvgl_port.c:493
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0m

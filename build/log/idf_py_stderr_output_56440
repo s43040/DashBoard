@@ -1,0 +1,15 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM5 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM5 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40375e16: panic_abort at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/panic.c:466
+0x4038196d: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/esp_system_chip.c:93
+0x4038285e: vApplicationStackOverflowHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:558
+0x4038397f: vTaskSwitchContext at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:3664 (discriminator 7)
+0x40382924: _frxt_dispatch at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:451
+0x4038291a: _frxt_int_exit at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:246
+0x400559e0: _xtos_set_intlevel in ROM
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0m

@@ -1,0 +1,40 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM5 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM5 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x42036f53: task_wdt_timeout_handling at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/task_wdt/task_wdt.c:441
+0x42037370: task_wdt_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/task_wdt/task_wdt.c:515
+0x4037c1fd: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x42009857: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:56
+0x42047717: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x4038240d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42036f53: task_wdt_timeout_handling at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/task_wdt/task_wdt.c:441
+0x42037370: task_wdt_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/task_wdt/task_wdt.c:515
+0x4037c1fd: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x42009857: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:56
+0x42047717: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x4038240d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42036f53: task_wdt_timeout_handling at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/task_wdt/task_wdt.c:441
+0x42037370: task_wdt_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/task_wdt/task_wdt.c:515
+0x4037c1fd: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x42009857: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:56
+0x42047717: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x4038240d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42036f53: task_wdt_timeout_handling at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/task_wdt/task_wdt.c:441
+0x42037370: task_wdt_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/task_wdt/task_wdt.c:515
+0x4037c1fd: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x42009857: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:56
+0x42047717: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x4038240d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42036f53: task_wdt_timeout_handling at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/task_wdt/task_wdt.c:441
+0x42037370: task_wdt_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/task_wdt/task_wdt.c:515
+0x4037c1fd: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x42009857: app_main at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:56
+0x42047717: main_task at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/app_startup.c:208
+0x4038240d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0m

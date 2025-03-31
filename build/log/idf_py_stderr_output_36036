@@ -1,0 +1,727 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM5 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM5 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40056f62: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5f: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f62: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5f: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f5e: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5b: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f62: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5f: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f5e: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5b: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f62: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5f: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f62: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5f: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f5e: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5b: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f62: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5f: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f62: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5f: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f5e: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5b: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f5e: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5b: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f62: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5f: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x4038a612: _xt_context_restore at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_context.S:265
+0x40382920: _frxt_int_exit at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:270
+[0m
+[0;33m--- 0x40382920: _frxt_int_exit at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:270
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x4038a60f: _xt_context_save at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_context.S:220
+0x4038291d: _frxt_int_exit at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S:263
+0x4037c1a5: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1233
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x4037dfda: esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:145
+[0m
+[0;33m--- 0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x4037bba5: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:913
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x4037bba2: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:913
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f5e: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5b: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f62: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5f: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f62: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5f: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f5e: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5b: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f62: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5f: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f62: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5f: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f5e: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5b: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f62: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5f: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f5e: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5b: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f5e: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5b: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x4037bba5: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:913
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x4037bba2: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:913
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f5e: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5b: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f62: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5f: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f62: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5f: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f5e: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5b: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0;33m--- 0x40056f62: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5c: memcpy in ROM
+0x40056f72: memcpy in ROM
+[0m
+[0;33m--- 0x40056f5f: memcpy in ROM
+0x4037bb64: lcd_rgb_panel_fill_bounce_buffer at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:906
+0x4037bd8d: lcd_rgb_panel_eof_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_lcd/src/esp_lcd_panel_rgb.c:943
+0x4037e0ae: gdma_default_tx_isr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/dma/gdma.c:869
+0x4037c205: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfd7: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200395a: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x4038335d: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x42009eda: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+[0m
+[0;33m--- 0x42009ed7: warning at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:199
+0x4038245d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d8c: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0m

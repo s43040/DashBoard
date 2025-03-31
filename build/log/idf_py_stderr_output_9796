@@ -1,0 +1,27 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM5 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM5 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40376e5f: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.2.3/components/newlib/locks.c:130
+[0m
+[0;33m--- 0x40375e1e: panic_abort at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/panic.c:466
+0x40381985: esp_system_abort at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/esp_system_chip.c:93
+0x40388695: abort at C:/Espressif/frameworks/esp-idf-v5.2.3/components/newlib/abort.c:38
+0x40376e5f: lock_acquire_generic at C:/Espressif/frameworks/esp-idf-v5.2.3/components/newlib/locks.c:130
+0x40376f75: _lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.2.3/components/newlib/locks.c:158
+0x4037703f: __retarget_lock_acquire_recursive at C:/Espressif/frameworks/esp-idf-v5.2.3/components/newlib/locks.c:314
+0x4203eb1e: _vfprintf_r at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp-elf/src/newlib/newlib/libc/stdio/vfprintf.c:846 (discriminator 2)
+0x4203a59f: printf at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp-elf/src/newlib/newlib/libc/stdio/printf.c:56
+0x4037740b: gpio_isr_handler at C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/main.c:29
+0x4037c60e: gpio_isr_loop at C:/Espressif/frameworks/esp-idf-v5.2.3/components/driver/gpio/gpio.c:470
+0x4037c682: gpio_intr_service at C:/Espressif/frameworks/esp-idf-v5.2.3/components/driver/gpio/gpio.c:492
+0x4037c21d: _xt_lowint1 at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:1240
+0x4037dfef: xt_utils_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/include/xt_utils.h:81
+ (inlined by) esp_cpu_wait_for_intr at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_hw_support/cpu.c:132
+0x4200396e: esp_vApplicationIdleHook at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/freertos_hooks.c:59
+0x40383375: prvIdleTask at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/tasks.c:4307 (discriminator 1)
+0x40382475: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.2.3/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40375d94: esp_restart_noos at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/soc/esp32s3/system_internal.c:159
+[0m
+[0m
