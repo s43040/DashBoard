@@ -4,35 +4,38 @@
 #define MOUNT_POINT "/sdcard"
 
 static lv_obj_t * tabview;
-int tab_id;
+int tab_id = 0;
 int errorCode = 0;
-int errorCode1 = 0;
-int errorCode2 = 0;
-int errorCode3 = 0;
+int WaterTempError = 0;
+int VoltageError = 0;
+int OilPressureError = 0;
+int OilTempError = 0;
 int goodZone = 1;
 static lv_style_t style_indic;
+
+int screenChange = 0;
 
 void setUpFields(tab tabs[], int tabCounter, char* things[], float maxes[], float mins[]){
     tabs[tabCounter].fields = (field*)malloc(10*sizeof(field));
     for(int i = 0; i<10; i++){
-        tabs[tabCounter].fields[i].value = (float*)malloc(sizeof(float));
+        tabs[tabCounter].fields[i].value = (int*)malloc(sizeof(int));
     }
 
     int xcoordinate, ycoordinate;
     if(!tabCounter){
         for(int i = 0; i<3; i++){
-            xcoordinate = -270+270*i; ycoordinate = -80+abs(-30+30*i);
+            xcoordinate = -270+270*i; ycoordinate = -65+abs(-30+30*i);
             tabs[tabCounter].fields[i].counter = create_counter(tabs[tabCounter].tab, xcoordinate, ycoordinate, TAB1);
             tabs[tabCounter].fields[i].label = create_label(tabs[tabCounter].tab, xcoordinate, ycoordinate, things[i], TAB1);
-            tabs[tabCounter].fields[i].bar = create_progress_bar(tabs[tabCounter].tab, xcoordinate, ycoordinate, maxes[i], mins[i]);
-            *(tabs[tabCounter].fields[i].value) = (float)(maxes[i]+mins[i])/2;
+            //tabs[tabCounter].fields[i].bar = create_progress_bar(tabs[tabCounter].tab, xcoordinate, ycoordinate, maxes[i], mins[i]);
+            *(tabs[tabCounter].fields[i].value) = (maxes[i]+mins[i])/2;
         }
         tabs[tabCounter].fields[3].counter = create_counter(tabs[tabCounter].tab, 0, 110, TAB1);
         tabs[tabCounter].fields[3].label = create_label(tabs[tabCounter].tab, 0, 110, things[3], TAB1);
         tabs[tabCounter].fields[3].bar = create_progress_bar(tabs[tabCounter].tab, 0, -230, maxes[3], mins[3]);
         lv_obj_set_width(tabs[tabCounter].fields[3].bar, 760);
         lv_obj_set_height(tabs[tabCounter].fields[3].bar, 60);
-        *(tabs[tabCounter].fields[3].value) = (float)(maxes[3]+mins[3])/2;
+        *(tabs[tabCounter].fields[3].value) = (maxes[3]+mins[3])/2;
         
         
         lv_style_init(&style_indic);
@@ -49,25 +52,23 @@ void setUpFields(tab tabs[], int tabCounter, char* things[], float maxes[], floa
             xcoordinate = -285+180*i; ycoordinate = 180+40*i;
             tabs[tabCounter].fields[4+i].counter = create_counter(tabs[tabCounter].tab, xcoordinate, ycoordinate, TAB1);
             tabs[tabCounter].fields[4+i].label = create_label(tabs[tabCounter].tab, xcoordinate, ycoordinate, things[4+i], TAB1);
-            *(tabs[tabCounter].fields[4+i].value) = (float)(maxes[4+i]+mins[4+i])/2;
+            *(tabs[tabCounter].fields[4+i].value) = (maxes[4+i]+mins[4+i])/2;
         }
         for(int i = 0; i<2; i++){
             xcoordinate = 105+185*i; ycoordinate = 220-40*i;
             tabs[tabCounter].fields[6+i].counter = create_counter(tabs[tabCounter].tab, xcoordinate, ycoordinate, TAB1);
             tabs[tabCounter].fields[6+i].label = create_label(tabs[tabCounter].tab, xcoordinate, ycoordinate, things[6+i], TAB1);
-            *(tabs[tabCounter].fields[6+i].value) = (float)(maxes[6+i]+mins[6+i])/2;
+            *(tabs[tabCounter].fields[6+i].value) = (maxes[6+i]+mins[6+i])/2;
         }
         lv_label_set_recolor(tabs[tabCounter].fields[VOLTAGE_INDEX].counter, true);
     }
     else{
         for(int i = 0; i<3; i++){
             for(int x = 0; x<3; x++){
-                printf("here\n");
                 xcoordinate = -250+250*x; ycoordinate = -80+150*i;
                 tabs[tabCounter].fields[3*i+x].counter = create_counter(tabs[tabCounter].tab, xcoordinate, ycoordinate, TAB2);
                 tabs[tabCounter].fields[3*i+x].label = create_label(tabs[tabCounter].tab, xcoordinate, ycoordinate, things[TAB1NUMFIELDS+3*i+x], TAB2);
-                if(i<2)
-                tabs[tabCounter].fields[3*i+x].bar = create_progress_bar(tabs[tabCounter].tab, xcoordinate, ycoordinate, maxes[TAB1NUMFIELDS+3*i+x], mins[TAB1NUMFIELDS+3*i+x]);
+                //tabs[tabCounter].fields[3*i+x].bar = create_progress_bar(tabs[tabCounter].tab, xcoordinate, ycoordinate, maxes[TAB1NUMFIELDS+3*i+x], mins[TAB1NUMFIELDS+3*i+x]);
             }
         }
         tabs[tabCounter].fields[9].bar = create_progress_bar(tabs[tabCounter].tab, 0, -230, 15000, 0);
@@ -76,6 +77,8 @@ void setUpFields(tab tabs[], int tabCounter, char* things[], float maxes[], floa
         *(tabs[tabCounter].fields[9].value) = 7500;
         lv_style_init(&style_indic);
         lv_style_set_bg_opa(&style_indic, LV_OPA_COVER);
+        lv_label_set_recolor(tabs[tabCounter].fields[TAB2_OIL_TEMPERATURE_INDEX].counter, true);
+        lv_label_set_recolor(tabs[tabCounter].fields[TAB2_OIL_PRESSURE_INDEX].counter, true);
         //lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_RED));
         // lv_style_set_bg_grad_color(&style_indic, lv_palette_main(LV_PALETTE_RED));
         // lv_style_set_bg_grad_dir(&style_indic, LV_GRAD_DIR_HOR);
@@ -149,8 +152,39 @@ void makeCircle(tab* tabs, int i){
 }
 
 void updateObject(field object, int value, int index, int page){
+    // if(page && index == LAMBDA_INDEX){
+    //     char buffer[100] = ""; 
+    //     sprintf(buffer, "%.2f", value*LAMBDA_CONVERSION);
+    //     lv_label_set_text(object.counter, buffer);
+    //     lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
+    //     return;
+    // }
+    // if(page && (index == TAB2_OIL_TEMPERATURE_INDEX  || index == TAB2_OIL_PRESSURE_INDEX)){
+    //     char buffer[100] = ""; 
+    //     sprintf(buffer, "%d", value);
+    //     lv_label_set_text(object.counter, buffer);
+    //     return;
+    // }
+
     if(page && index == TAB2_RPM_INDEX){
         lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
+        lv_obj_invalidate(object.bar);
+        return;
+    }
+
+    if(page && index == TAB2_OIL_TEMPERATURE_INDEX && OilTempError){
+        char buffer[100] = "";
+        sprintf(buffer, "#ff0000 %d", value);
+        lv_label_set_text(object.counter, buffer);
+        lv_obj_invalidate(object.counter);
+        return;
+    }
+
+    if(page && index == TAB2_OIL_PRESSURE_INDEX && OilPressureError){
+        char buffer[100] = "";
+        sprintf(buffer, "#ff0000 %d", value);
+        lv_label_set_text(object.counter, buffer);
+        lv_obj_invalidate(object.counter);
         return;
     }
 
@@ -158,80 +192,117 @@ void updateObject(field object, int value, int index, int page){
         switch (value){
             case 0:
                 lv_label_set_text(object.counter, "S");
-                lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
+                //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
                 break;
             case 1:
                 lv_label_set_text(object.counter, "E");
-                lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
+                //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
                 break;
             case 2:
                 lv_label_set_text(object.counter, "D");
-                lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
+                //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
                 break;
         }
+        lv_obj_invalidate(object.counter);
+        return;
+    }
+
+    if(index == FRONT_BRAKE_PRESSURE_INDEX && value > 9000 && page){
+        lv_label_set_text(object.counter, "0");
+        lv_obj_invalidate(object.counter);
+        return;
+    }
+
+    if(page){
+        char buffer[100] = ""; 
+        sprintf(buffer, "%d", value);
+        lv_label_set_text(object.counter, buffer);
+        lv_obj_invalidate(object.counter);
         return;
     }
     
-    *(object.value) = (int)value;
-    if(errorCode1 && index == WATER_TEMP_INDEX && page == TAB1){
+    if(WaterTempError && index == WATER_TEMP_INDEX){
         char buffer[100] = ""; 
         sprintf(buffer, "#ff0000 %d", value);
         lv_label_set_text(object.counter, buffer);
-        lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
+        lv_obj_invalidate(object.counter);
+        //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
         return;
     }
     
-    if(errorCode2 && index == VOLTAGE_INDEX && page == TAB1){
+    if(VoltageError && index == VOLTAGE_INDEX){
         char buffer[100] = ""; 
         sprintf(buffer, "#ff0000 %.1f", ((float)value) / 10);
         lv_label_set_text(object.counter, buffer);
+        lv_obj_invalidate(object.counter);
         return;
     }
 
-    if(errorCode3 && index == OIL_PRESSURE_INDEX && page == TAB1){
+    if(OilPressureError && index == OIL_PRESSURE_INDEX){
         char buffer[100] = ""; 
         sprintf(buffer, "#ff0000 %d", value);
         lv_label_set_text(object.counter, buffer);
-        lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
+        lv_obj_invalidate(object.counter);
+        // lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
+        return;
+    }
+
+    if(OilTempError && (index == OIL_TEMP_INDEX || index == TAB2_OIL_TEMPERATURE_INDEX)){
+        char buffer[100] = "";
+        sprintf(buffer, "#ff0000 %d", value);
+        lv_label_set_text(object.counter, buffer);
+        lv_obj_invalidate(object.counter);
         return;
     }
 
 
-    if(index == VOLTAGE_INDEX && page == TAB1){
+    if(index == VOLTAGE_INDEX){
         char buffer[100] = "";
         sprintf(buffer, "%.1f", ((float)value)/10);
         lv_label_set_text(object.counter, buffer);
+        lv_obj_invalidate(object.counter);
         return;
     }
     char buffer[100] = "";
     sprintf(buffer, "%d", value);
 
-    if(index == GEAR_INDEX && value == 0 && page == TAB1){
+    if(index == GEAR_INDEX && value == 0){
         lv_label_set_text(object.counter, "N");
+        lv_obj_invalidate(object.counter);
         return;
     }
 
-    if(index == GEAR_INDEX && value > 6 && page == TAB1){
+    if(index == GEAR_INDEX && value > 6){
         lv_label_set_text(object.counter, "D");
+        lv_obj_invalidate(object.counter);
         return;
     }
 
-    else if((index == WATER_TEMP_INDEX || index == OIL_PRESSURE_INDEX || index == OIL_TEMP_INDEX || index == RPM_INDEX) && page == TAB1){
+    if(index == RPM_INDEX){
+        char buffer[100] = ""; 
+        sprintf(buffer, " #ffffff %d ", value);
+        lv_label_set_text(object.counter, buffer);
+        lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
+        lv_obj_invalidate(object.counter);
+        lv_obj_invalidate(object.bar);
+        return;
+    }
+
+    else if((index == WATER_TEMP_INDEX || index == OIL_PRESSURE_INDEX || index == OIL_TEMP_INDEX)){
         char buffer[100] = ""; 
         sprintf(buffer, "#ffffff %d", value);
         lv_label_set_text(object.counter, buffer);
-        lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
-        return;
-    }
-    else if(page){
-        lv_label_set_text(object.counter, buffer);
-        lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
+        lv_obj_invalidate(object.counter);
+        //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
         return;
     }
     else{
         lv_label_set_text(object.counter, buffer);
+        lv_obj_invalidate(object.counter);
+        //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
         return;
     }
+
 }
 
 void updateArray(tab tabs[]){
@@ -241,79 +312,160 @@ void updateArray(tab tabs[]){
             return;
         }
             //printf("madeit\n");
+        
         switch(message.identifier){
             case 0x700:
-                updateObject(tabs[TAB1].fields[MPH_INDEX], (message.data[0] << 8 | message.data[1]), MPH_INDEX, TAB1);
-                if((message.data[2] << 8 | message.data[3])<7500){
-                    lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_BLUE));
+
+                if(*(tabs[TAB1].fields[MPH_INDEX].value) != (message.data[0] << 8 | message.data[1])){
+                    *(tabs[TAB1].fields[MPH_INDEX].value) = (message.data[0] << 8 | message.data[1]);
+                    updateObject(tabs[TAB1].fields[MPH_INDEX], (message.data[0] << 8 | message.data[1])/10, MPH_INDEX, TAB1);
                 }
-                else if((message.data[2] << 8 | message.data[3])<12000){
-                    lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_ORANGE));
+
+                if(*(tabs[TAB1].fields[RPM_INDEX].value) != (message.data[2] << 8 | message.data[3])){
+                    *(tabs[TAB1].fields[RPM_INDEX].value) = (message.data[2] << 8 | message.data[3]);
+                    if((message.data[2] << 8 | message.data[3])<7500){
+                        lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_BLUE));
+                    }
+                    else if((message.data[2] << 8 | message.data[3])<12000){
+                        lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_ORANGE));
+                    }
+                    else{
+                        lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_RED));
+                    }
+                    updateObject(tabs[TAB1].fields[RPM_INDEX], (message.data[2] << 8 | message.data[3]), RPM_INDEX, TAB1);
+                    updateObject(tabs[TAB2].fields[TAB2_RPM_INDEX], (message.data[2] << 8 | message.data[3]), TAB2_RPM_INDEX, TAB2);
                 }
-                else{
-                    lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_RED));
-                }
-                updateObject(tabs[TAB1].fields[RPM_INDEX], (message.data[2] << 8 | message.data[3]), RPM_INDEX, TAB1);
-                updateObject(tabs[TAB2].fields[TAB2_RPM_INDEX], (message.data[2] << 8 | message.data[3]), TAB2_RPM_INDEX, TAB2);
+
                 //lv_obj_invalidate(tabs[0].tab);
-                if((message.data[4]/10)<10){
-                    errorCode2 = 1;
+                if(*(tabs[TAB1].fields[VOLTAGE_INDEX].value) != (message.data[4])){
+                    *(tabs[TAB1].fields[VOLTAGE_INDEX].value) = (message.data[4]);
+                    if((message.data[4]/10)<10){
+                        VoltageError = 1;
+                    }
+                    else{
+                        VoltageError = 0;
+                    }
+                    updateObject(tabs[TAB1].fields[VOLTAGE_INDEX], (message.data[4]), VOLTAGE_INDEX, TAB1);
                 }
-                else{
-                    errorCode2 = 0;
+
+                if(*(tabs[TAB1].fields[WATER_TEMP_INDEX].value) != (int)((message.data[5] << 8 | message.data[6])*WATER_TEMP_CONVERSION)){
+                    *(tabs[TAB1].fields[WATER_TEMP_INDEX].value) = (message.data[5] << 8 | message.data[6])*WATER_TEMP_CONVERSION;
+                    if((message.data[5] << 8 | message.data[6])*WATER_TEMP_CONVERSION>225){
+                        WaterTempError = 1;
+                    }
+                    else{
+                        WaterTempError = 0;
+                    }
+                    updateObject(tabs[TAB1].fields[WATER_TEMP_INDEX], (message.data[5] << 8 | message.data[6])*WATER_TEMP_CONVERSION, WATER_TEMP_INDEX, TAB1);
                 }
-                updateObject(tabs[TAB1].fields[VOLTAGE_INDEX], (message.data[4]), VOLTAGE_INDEX, TAB1);
-                if((message.data[5] << 8 | message.data[6])/WATER_TEMP_CONVERSION>225){
-                    errorCode1 = 1;
+
+                if(*(tabs[TAB1].fields[FUEL_PRESSURE_INDEX].value) != message.data[7]){
+                    *(tabs[TAB1].fields[FUEL_PRESSURE_INDEX].value) = message.data[7];
+                    updateObject(tabs[TAB1].fields[FUEL_PRESSURE_INDEX], (message.data[7]), FUEL_PRESSURE_INDEX, TAB1);
                 }
-                else{
-                    errorCode1 = 0;
-                }
-                updateObject(tabs[TAB1].fields[WATER_TEMP_INDEX], (message.data[5] << 8 | message.data[6])*WATER_TEMP_CONVERSION, WATER_TEMP_INDEX, TAB1);
-                updateObject(tabs[TAB1].fields[FUEL_PRESSURE_INDEX], (message.data[7]), FUEL_PRESSURE_INDEX, TAB1);
+
+                
+
                 //lv_obj_invalidate(tabs[0].tab);
                 break;
             case 0x701:
-                if(((message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION)<10 || ((message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION)>80){ 
-                    errorCode3 = 1;
+
+                if(*(tabs[TAB1].fields[OIL_PRESSURE_INDEX].value) != (int)((message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION)){
+                    *(tabs[TAB1].fields[OIL_PRESSURE_INDEX].value) = (message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION;
+                    if(((message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION)<10 || ((message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION)>95){ 
+                        OilPressureError = 1;
+                    }
+                    else{
+                        OilPressureError = 0;
+                    }
+                    updateObject(tabs[TAB1].fields[OIL_PRESSURE_INDEX], (message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION, OIL_PRESSURE_INDEX, TAB1);
+                    updateObject(tabs[TAB2].fields[TAB2_OIL_PRESSURE_INDEX], (message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION, TAB2_OIL_PRESSURE_INDEX, TAB2);
+
+                }                
+
+                if(*(tabs[TAB2].fields[ABSOLUTE_MANIFOLD_PRESSURE_INDEX].value) != (int)((message.data[2] << 8 | message.data[3])*ABSOLUTE_MANIFOLD_PRESSURE_CONVERSION)){
+                    *(tabs[TAB2].fields[ABSOLUTE_MANIFOLD_PRESSURE_INDEX].value) = ((message.data[2] << 8 | message.data[3])*ABSOLUTE_MANIFOLD_PRESSURE_CONVERSION);
+                    updateObject(tabs[TAB2].fields[ABSOLUTE_MANIFOLD_PRESSURE_INDEX], (message.data[2] << 8 | message.data[3])*ABSOLUTE_MANIFOLD_PRESSURE_CONVERSION, ABSOLUTE_MANIFOLD_PRESSURE_INDEX, TAB2);
                 }
-                else{
-                    errorCode3 = 0;
+
+                if(*(tabs[TAB2].fields[LAMBDA_INDEX].value) != ((message.data[6])*LAMBDA_CONVERSION)){
+                    *(tabs[TAB2].fields[LAMBDA_INDEX].value) = ((message.data[6])*LAMBDA_CONVERSION);
+                    updateObject(tabs[TAB2].fields[LAMBDA_INDEX], (message.data[6])*LAMBDA_CONVERSION, LAMBDA_INDEX, TAB2);
                 }
-                updateObject(tabs[TAB1].fields[OIL_PRESSURE_INDEX], (message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION, OIL_PRESSURE_INDEX, TAB1);
-                updateObject(tabs[TAB2].fields[TAB2_OIL_PRESSURE_INDEX], (message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION, TAB2_OIL_PRESSURE_INDEX, TAB2);
-                updateObject(tabs[TAB2].fields[ABSOLUTE_MANIFOLD_PRESSURE_INDEX], (message.data[2] << 8 | message.data[3])*ABSOLUTE_MANIFOLD_PRESSURE_CONVERSION, ABSOLUTE_MANIFOLD_PRESSURE_INDEX, TAB2);
-                updateObject(tabs[TAB2].fields[LAMBDA_INDEX], (message.data[6])*LAMBDA_CONVERSION, LAMBDA_INDEX, TAB2); 
                 break;
             case 0x702:
-                updateObject(tabs[TAB2].fields[FRONT_BRAKE_PRESSURE_INDEX], (message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION, FRONT_BRAKE_PRESSURE_INDEX, TAB2); //may need conversion
-                break;
+
+                if(*(tabs[TAB2].fields[FRONT_BRAKE_PRESSURE_INDEX].value) != (int)((message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION)){
+                    *(tabs[TAB2].fields[FRONT_BRAKE_PRESSURE_INDEX].value) = (message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION;
+                    updateObject(tabs[TAB2].fields[FRONT_BRAKE_PRESSURE_INDEX], (message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION, FRONT_BRAKE_PRESSURE_INDEX, TAB2);
+                }
+
+                return;
             case 0x704:
-                updateObject(tabs[TAB1].fields[GEAR_INDEX], (message.data[2]), GEAR_INDEX, TAB1);
-                updateObject(tabs[TAB1].fields[OIL_TEMP_INDEX], (message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION, OIL_TEMP_INDEX, TAB1);
-                updateObject(tabs[TAB2].fields[TAB2_OIL_TEMPERATURE_INDEX], (message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION, TAB2_OIL_TEMPERATURE_INDEX, TAB2);
+
+                if(*(tabs[TAB1].fields[GEAR_INDEX].value) != ((message.data[2]))){
+                    *(tabs[TAB1].fields[GEAR_INDEX].value) = ((message.data[2]));
+                    updateObject(tabs[TAB1].fields[GEAR_INDEX], (message.data[2]), GEAR_INDEX, TAB1);
+                }
+                if(*(tabs[TAB1].fields[OIL_TEMP_INDEX].value) != (int)((message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION)){
+                    *(tabs[TAB1].fields[OIL_TEMP_INDEX].value) = ((message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION);
+                    if(((message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION)>240){
+                        OilTempError = 1;
+                    }
+                    else{
+                        OilTempError = 0;
+                    }
+                    updateObject(tabs[TAB1].fields[OIL_TEMP_INDEX], (message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION, OIL_TEMP_INDEX, TAB1);
+                    updateObject(tabs[TAB2].fields[TAB2_OIL_TEMPERATURE_INDEX], (message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION, TAB2_OIL_TEMPERATURE_INDEX, TAB2);
+                }
+
+                // if(*(tabs[TAB1].fields[RPM_INDEX].value) != ((message.data[0]) << 8 | message.data[1])){
+                //     *(tabs[TAB1].fields[RPM_INDEX].value) = ((message.data[0]) << 8 | message.data[1]);
+                //     updateObject(tabs[TAB1].fields[RPM_INDEX], ((message.data[0]) << 8 | message.data[1]), RPM_INDEX, TAB1);
+                //     screenChange = true;
+                // }
 
                 break;
             case 0x70f:
-                updateObject(tabs[TAB2].fields[GEAR_POSITION_SOURCE_INDEX], (message.data[0]), GEAR_POSITION_SOURCE_INDEX, TAB2);
-                break;
+                if(*(tabs[TAB2].fields[GEAR_POSITION_SOURCE_INDEX].value) != ((message.data[4]))){
+                    *(tabs[TAB2].fields[GEAR_POSITION_SOURCE_INDEX].value) = ((message.data[4]));
+                    updateObject(tabs[TAB2].fields[GEAR_POSITION_SOURCE_INDEX], (message.data[4]), GEAR_POSITION_SOURCE_INDEX, TAB2);
+                }
+                return;
             case 0x714:
-                updateObject(tabs[TAB2].fields[TANK_PRESSURE_INDEX], (message.data[0] << 8 | message.data[1])*TANK_PRESSURE_CONVERSION, TANK_PRESSURE_INDEX, TAB2);
-                updateObject(tabs[TAB2].fields[REGULATOR_PRESSURE_INDEX], (message.data[2] << 8 | message.data[3])*REGULATOR_PRESSURE_CONVERSION, REGULATOR_PRESSURE_INDEX, TAB2);
-                updateObject(tabs[TAB2].fields[BRAKE_BIAS_INDEX], (message.data[4]), BRAKE_BIAS_INDEX, TAB2);
-                updateObject(tabs[TAB2].fields[GEAR_POSITION_SOURCE_INDEX], (message.data[5]), GEAR_POSITION_SOURCE_INDEX, TAB2);
+                if(*(tabs[TAB2].fields[TANK_PRESSURE_INDEX].value) != (int)((message.data[0] << 8 | message.data[1])*TANK_PRESSURE_CONVERSION)){
+                    *(tabs[TAB2].fields[TANK_PRESSURE_INDEX].value) = ((message.data[0] << 8 | message.data[1])*TANK_PRESSURE_CONVERSION);
+                    updateObject(tabs[TAB2].fields[TANK_PRESSURE_INDEX], (message.data[0] << 8 | message.data[1])*TANK_PRESSURE_CONVERSION, TANK_PRESSURE_INDEX, TAB2);
+                }
+
+                if(*(tabs[TAB2].fields[REGULATOR_PRESSURE_INDEX].value) != (int)((message.data[2] << 8 | message.data[3])*REGULATOR_PRESSURE_CONVERSION)){
+                    *(tabs[TAB2].fields[REGULATOR_PRESSURE_INDEX].value) = (message.data[2] << 8 | message.data[3])*REGULATOR_PRESSURE_CONVERSION;
+                    updateObject(tabs[TAB2].fields[REGULATOR_PRESSURE_INDEX], (message.data[2] << 8 | message.data[3])*REGULATOR_PRESSURE_CONVERSION, REGULATOR_PRESSURE_INDEX, TAB2);
+                }
+
+                if(*(tabs[TAB2].fields[BRAKE_BIAS_INDEX].value) != (message.data[4] << 8 | message.data[5])){
+                    *(tabs[TAB2].fields[BRAKE_BIAS_INDEX].value) = (message.data[4] << 8 | message.data[5]);
+                    updateObject(tabs[TAB2].fields[BRAKE_BIAS_INDEX], (message.data[4] << 8 | message.data[5]), BRAKE_BIAS_INDEX, TAB2);
+                }
+
+                // if(screenChange){
+                //     lvgl_port_lock(-1);
+                //     lv_obj_invalidate(tabs[tab_id].tab);
+                //     lvgl_port_unlock();
+                //     screenChange = 0;
+                // }
+                return;
         }
         
-        if((errorCode1 || errorCode2 || errorCode3) && (goodZone != 0)){
+        if((WaterTempError || VoltageError || OilPressureError || OilTempError) && (goodZone != 0)){
             errorCode = 1;
             goodZone = 0;
-            //printf("here\n");
         }
-        else if(!(errorCode1 || errorCode2 || errorCode3)){
+        else if(!(WaterTempError || VoltageError || OilPressureError || OilTempError)){
             errorCode = 0;
             goodZone = 1;
         }
-        lv_obj_invalidate(tabs[0].tab);
+        
     //}
 }
 
@@ -322,34 +474,54 @@ void warning(tab tabs[]){
     while(true){
         if((errorCode && !goodZone) && (goodZone != errorCode)){
             changed = 1;
-            lv_tabview_set_act(tabview, TAB1, LV_ANIM_OFF);
-            lv_obj_invalidate(tabs[TAB1].tab);
+            lvgl_port_lock(-1);
+            if(tab_id){
+                switchTabID();
+                switchTabView();
+                lv_obj_invalidate(tabs[TAB1].tab);
+            }
+            lvgl_port_unlock();
             
-            for(int i = 0; i<5 && (errorCode); i++){
+            for(int i = 0; i<3 && (errorCode); i++){
+                lvgl_port_lock(-1);
                 lv_obj_set_style_bg_color(tabview, lv_palette_lighten(LV_PALETTE_RED, 1), LV_PART_MAIN);
                 lv_obj_set_style_bg_color(tabs[TAB1].circle, lv_palette_main(LV_PALETTE_BLUE), 0);
                 lv_obj_invalidate(tabs[TAB1].tab);
+                lvgl_port_unlock();
                 vTaskDelay(200);
                 
+                lvgl_port_lock(-1);
                 lv_obj_set_style_bg_color(tabview, lv_palette_lighten(LV_PALETTE_BLUE, 1), LV_PART_MAIN);
                 lv_obj_set_style_bg_color(tabs[TAB1].circle, lv_palette_main(LV_PALETTE_RED), 0);
                 lv_obj_invalidate(tabs[TAB1].tab);
+                lvgl_port_unlock();
                 vTaskDelay(200);
+                
                 
             }
             errorCode = 0;
         }
         else if (changed){
+            lvgl_port_lock(-1);
             lv_obj_set_style_bg_color(tabview, lv_palette_lighten(LV_PALETTE_YELLOW, 1), LV_PART_MAIN);
             lv_obj_set_style_bg_color(tabs[TAB1].circle, lv_palette_main(LV_PALETTE_NONE), 0);
+            lv_obj_invalidate(tabs[tab_id].tab);
+            lvgl_port_unlock();
             vTaskDelay(500);
-            lv_obj_invalidate(tabs[TAB1].tab);
             changed = 0;
         }
         else{
-            vTaskDelay(500);
+            vTaskDelay(500);//#include<unistd.h> usleep();
         }
     }
+}
+
+void switchTabID(int tabNum){
+    tab_id = !tab_id;
+}
+
+void switchTabView(){
+    lv_tabview_set_act(tabview, tab_id, LV_ANIM_OFF);
 }
 
 // void button_init() {

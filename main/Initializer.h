@@ -70,7 +70,7 @@ struct{
     lv_obj_t* label;
     lv_obj_t* bar;
     lv_obj_t* counter;
-    float* value;
+    int* value;
 } typedef field;
 
 struct{
@@ -94,4 +94,7 @@ void warning(tab tabs[]);
 void updateArray(tab tabs[]);
 void button_init();
 void button_task(void *arg);
+void switchTabID();
+int getTabID();
+void switchTabView();
 // esp_err_t SD_init(sdmmc_slot_config_t* SD_config);

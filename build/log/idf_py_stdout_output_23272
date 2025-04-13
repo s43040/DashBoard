@@ -1,20 +1,96 @@
-[1/9] Performing build step for 'bootloader'
-[1/1] cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.2.3\ESP32-S3-Touch-LCD-7-Demo\ESP-IDF\08_lvgl_Porting\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.2_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.2.3/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/build/bootloader/bootloader.bin"
-Bootloader binary size 0x5a30 bytes. 0x25d0 bytes (30%) free.
-[2/7] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/Initializer.c.obj
-In file included from C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.h:1,
-                 from C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/Initializer.c:1:
-C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/main/waveshare_rgb_lcd_port.h:68:20: warning: 'TAG' defined but not used [-Wunused-variable]
-   68 | static const char *TAG = "example";
-      |                    ^~~
-[3/7] Linking C static library esp-idf\main\libmain.a
-[4/7] Generating ld/sections.ld
-[5/7] Linking CXX executable lvgl_porting.elf
-[6/7] Generating binary image from built executable
-esptool.py v4.8.1
-Creating esp32s3 image...
-Merged 2 ELF sections
-Successfully created esp32s3 image.
-Generated C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/build/lvgl_porting.bin
-[7/7] cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.2.3\ESP32-S3-Touch-LCD-7-Demo\ESP-IDF\08_lvgl_Porting\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.2_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.2.3/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/build/partition_table/partition-table.bin C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/build/lvgl_porting.bin"
-lvgl_porting.bin binary size 0xc7430 bytes. Smallest app partition is 0x100000 bytes. 0x38bd0 bytes (22%) free.
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3820,len:0x19fc
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xe8c
+load:0x403cc700,len:0x313c
+entry 0x403c9940
+[0;32mI (27) boot: ESP-IDF v5.2.3-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar  5 2025 15:20:07[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot: efuse block revision: v1.3[0m
+[0;32mI (39) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (49) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (54) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (58) boot: Enabling RNG early entropy source...[0m
+[0;32mI (64) boot: Partition Table:[0m
+[0;32mI (67) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (75) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (82) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (89) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (97) boot: End of partition table[0m
+[0;32mI (101) esp_image: segment 0: paddr=00010020 vaddr=3c050020 size=93084h (602244) map[0m
+[0;32mI (199) esp_image: segment 1: paddr=000a30ac vaddr=3fc9a800 size=031a4h ( 12708) load[0m
+[0;32mI (202) esp_image: segment 2: paddr=000a6258 vaddr=40374000 size=09dc0h ( 40384) load[0m
+[0;32mI (212) esp_image: segment 3: paddr=000b0020 vaddr=42000020 size=4d898h (317592) map[0m
+[0;32mI (260) esp_image: segment 4: paddr=000fd8c0 vaddr=4037ddc0 size=0c9d0h ( 51664) load[0m
+[0;32mI (279) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (279) boot: Disabling RNG early entropy source...[0m
+[0;32mI (291) cpu_start: Multicore app[0m
+[0;32mI (292) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (292) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (294) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (300) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (305) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (310) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (315) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (321) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (327) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (333) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (339) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (345) MSPI Timing: PSRAM timing tuning index: 4[0m
+[0;32mI (349) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (354) esp_psram: Speed: 80MHz[0m
+[0;32mI (394) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (687) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (696) cpu_start: Pro cpu start user code[0m
+[0;32mI (696) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (696) cpu_start: Application information:[0m
+[0;32mI (699) cpu_start: Project name:     lvgl_porting[0m
+[0;32mI (705) cpu_start: App version:      ec04c3d-dirty[0m
+[0;32mI (710) cpu_start: Compile time:     Apr  5 2025 13:03:44[0m
+[0;32mI (716) cpu_start: ELF file SHA256:  9c13d602b...[0m
+[0;32mI (722) cpu_start: ESP-IDF:          v5.2.3-dirty[0m
+[0;32mI (727) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (732) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (737) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (741) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (748) heap_init: At 3FC9E9E8 len 0004AD28 (299 KiB): RAM[0m
+[0;32mI (755) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (761) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (767) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (773) esp_psram: Adding pool of 7552K of PSRAM memory to heap allocator[0m
+[0;32mI (781) spi_flash: detected chip: gd[0m
+[0;32mI (785) spi_flash: flash io: qio[0m
+[0;33mW (789) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (799) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (806) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (814) main_task: Started on CPU0[0m
+[0;32mI (818) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (827) main_task: Calling app_main()[0m
+[0;32mI (831) example: Install RGB LCD panel driver[0m
+[0;32mI (884) example: Initialize RGB LCD panel[0m
+[0;32mI (885) example: Initialize I2C bus[0m
+[0;32mI (886) example: Initialize GPIO[0m
+[0;32mI (886) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (895) example: Initialize Touch LCD[0m
+[0;32mI (1300) example: Initialize I2C panel IO[0m
+[0;32mI (1300) example: Initialize touch controller GT911[0m
+[0;33mW (1300) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1305) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1310) GT911: TouchPad_Config_Version:88[0m
+[0;32mI (1317) lv_port: Create LVGL task[0m
+[0;32mI (1319) example: Display LVGL demos[0m
+[Warn]	(4.128, +4128)	 lv_palette_main: Invalid palette: 255 	(in lv_color.c line #285)
+[0;32mI (5502) gpio: GPIO[19]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (5504) gpio: GPIO[20]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (5511) CAN: Driver initialized
+ [0m
+[0;32mI (5515) CAN: Driver started
+ [0m
+[0;32mI (5519) gpio: GPIO[6]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:1 [0m
