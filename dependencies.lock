@@ -2,13 +2,13 @@ dependencies:
   espressif/esp_lcd_touch:
     dependencies: []
     source:
-      path: C:\Espressif\frameworks\esp-idf-v5.2.3\ESP32-S3-Touch-LCD-7-Demo\ESP-IDF\08_lvgl_Porting\components\espressif__esp_lcd_touch
+      path: C:\Espressif\frameworks\esp-idf-v5.2.3\ESP32-S3-Touch-LCD-7-Demo\ESP-IDF\22DashBoard\components\espressif__esp_lcd_touch
       type: local
     version: 1.1.2
   espressif/esp_lcd_touch_gt911:
     dependencies: []
     source:
-      path: C:\Espressif\frameworks\esp-idf-v5.2.3\ESP32-S3-Touch-LCD-7-Demo\ESP-IDF\08_lvgl_Porting\components\espressif__esp_lcd_touch_gt911
+      path: C:\Espressif\frameworks\esp-idf-v5.2.3\ESP32-S3-Touch-LCD-7-Demo\ESP-IDF\22DashBoard\components\espressif__esp_lcd_touch_gt911
       type: local
     version: 1.1.1~1
   idf:
@@ -18,7 +18,7 @@ dependencies:
   lvgl/lvgl:
     dependencies: []
     source:
-      path: C:\Espressif\frameworks\esp-idf-v5.2.3\ESP32-S3-Touch-LCD-7-Demo\ESP-IDF\08_lvgl_Porting\components\lvgl__lvgl
+      path: C:\Espressif\frameworks\esp-idf-v5.2.3\ESP32-S3-Touch-LCD-7-Demo\ESP-IDF\22DashBoard\components\lvgl__lvgl
       type: local
     version: 8.4.0
 direct_dependencies:

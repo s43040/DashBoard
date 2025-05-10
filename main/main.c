@@ -16,7 +16,7 @@
 #include "esp_err.h"
 #include "esp_log.h"
 #include "esp_intr_alloc.h"
-#include "esp_timer.h"
+
 #include<unistd.h>
 
 #include "esp_lcd_panel_io.h"
@@ -48,20 +48,9 @@ void IRAM_ATTR gpio_isr_handler(void* arg) {//debounce
 
 void app_main()
 {
-    waveshare_esp32_s3_rgb_lcd_init(); // Initialize the Waveshare ESP32-S3 RGB LCD 
-    // wavesahre_rgb_lcd_bl_on();  //Turn on the screen backlight 
-    // wavesahre_rgb_lcd_bl_off(); //Turn off the screen backlight 
+    waveshare_esp32_s3_rgb_lcd_init();
     
-    ESP_LOGI(TAG, "Display LVGL demos");
-    // Lock the mutex due to the LVGL APIs are not thread-safe
     if (lvgl_port_lock(-1)) {
-        
-        // // lv_demo_stress();
-        // // lv_demo_benchmark();
-        // // lv_demo_music();
-        // lv_demo_widgets();
-        // // example_lvgl_demo_ui();
-        // // Release the mutex
         
         lv_obj_t *scr = lv_scr_act();
         LV_IMG_DECLARE(MizzouRacingLogoBlackBackground);
@@ -72,15 +61,7 @@ void app_main()
         lvgl_port_unlock();
         vTaskDelay(2000);
 
-        
 
-        // sdmmc_slot_config_t SD = SDMMC_SLOT_CONFIG_DEFAULT();
-        // SD.width = 128; //maybe
-        // SD.flags |= SDMMC_SLOT_FLAG_INTERNAL_PULLUP;//def not right
-        // SD.d0 = 37; //def not right
-        // SD.clk = 36;//def not right
-        // SD.cmd = 35;//def not right
-        // ESP_ERROR_CHECK(SD_init(&SD));
         lvgl_port_lock(-1);
         char* tab1Labels[50] = {"Water Temp (F)", "Oil Pressure (psi)", "Oil Temp (F)", "RPM", "Fuel Pressure (psi)", "MPH", "Gear", "Voltage (V)", "Tank Pressure (psi)", "Reg Pressure (psi)", "Lambda (LA)", "Manif Pressure (psi)", "F Brake Pressure (psi)", "Brake Bias (%)", "Gear Position Source", "Oil Temp (F)", "Oil Pressure (psi)"};
         float maxes[] = {250, 100, 250, 15000, 60, 90, 6, 145, 2000, 250, 255, 20, 2000, 100, 2, 250, 100};
@@ -98,22 +79,10 @@ void app_main()
             setUpFields(tabs, i, tab1Labels, maxes, mins);
         }
 
-        //setTabID(TAB1);
         lv_obj_set_style_bg_color(tabview, lv_palette_lighten(LV_PALETTE_YELLOW, 1), LV_PART_MAIN);
-
-        // float testHigh[8] = {200, 90, 225, 14000, 55, 80, 6, 14};
-        // float testLow[8] = {40, 10, 40, 1000, 20, 20, 0, 9.5};
-        // lv_obj_set_size(tabview, 800, 480);
-        // lv_obj_clear_flag(tabview, LV_OBJ_FLAG_SCROLLABLE);
-
         configure_CAN();
 
-        
-        //button_init();
-
         xTaskCreatePinnedToCore(warning, "WARNING", 4096, tabs, 5, NULL, 1);
-
-        //xTaskCreate(button_task, "BUTTON", 4096, NULL, 6, NULL);
 
         gpio_config_t io_conf = {};
         io_conf.intr_type = GPIO_INTR_NEGEDGE;  // Interrupt on falling edge
@@ -124,26 +93,21 @@ void app_main()
         gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
         gpio_isr_handler_add(GPIO_INPUT_IO, gpio_isr_handler, (void*) &counter);
 
-        
+        twai_message_t messageArray[6] = {0};
+        int messageNumber = 0;
+        twai_message_t tempMessage;
+        int messageIdentifiers[6] = {0, 1, 2, 4, 15, 20};
         
         lvgl_port_unlock();
         while(1){
             if(counter != changed){
-                // float filter = 0;
-                // currentUpdateTime = esp_timer_get_time();
-                // while((esp_timer_get_time() - currentUpdateTime)/1000 > 3){
-                //     filter = filter * 0.1 + 0.9 * (1-gpio_get_level(GPIO_INPUT_IO));
-                // }
-                // if(filter > 0.75){
-                usleep(5);
+                usleep(10);
                 if(!gpio_get_level(GPIO_INPUT_IO)){
                     lvgl_port_lock(-1);
-                    //lv_tabview_set_act(tabview, counter, LV_ANIM_OFF);
                     switchTabID();
                     switchTabView();
                     changed = counter;
                     lv_obj_invalidate(tabs[counter].tab);
-                    
                     lvgl_port_unlock();
                     last_interrupt_time = esp_timer_get_time();
                     //printf("succeeded to change\n");
@@ -158,13 +122,21 @@ void app_main()
                 }
             }
             currentUpdateTime = esp_timer_get_time();
-            if((currentUpdateTime - lastUpdateTime)/1000 > 100){
-                lastUpdateTime = currentUpdateTime;
-                //lvgl_port_lock(-1);
-                for(int i = 0; i<6; i++){
-                    updateArray(tabs);
+            if((currentUpdateTime - lastUpdateTime)/1000 > 90){
+                while(messageNumber != 6){
+                    tempMessage = recieve_CAN();
+                    if(tempMessage.identifier%0x700 == messageIdentifiers[messageNumber] && tempMessage.identifier != 0){
+                        messageArray[messageNumber] = tempMessage;
+                        messageNumber++;
+                        //printf("message %d\n", messageIdentifiers[messageNumber]);
+                    }
+                    //printf("%d\n", (int)tempMessage.identifier);
                 }
-                //lvgl_port_unlock();
+                messageNumber = 0;
+                lastUpdateTime = currentUpdateTime;
+                for(int i = 0; i<6; i++){
+                    updateArray(tabs, messageArray[i]);
+                }
                 usleep(0);
             }
             if(disabled && ((currentUpdateTime - last_interrupt_time)/1000 > 400)){

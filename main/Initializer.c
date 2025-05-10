@@ -27,7 +27,6 @@ void setUpFields(tab tabs[], int tabCounter, char* things[], float maxes[], floa
             xcoordinate = -270+270*i; ycoordinate = -65+abs(-30+30*i);
             tabs[tabCounter].fields[i].counter = create_counter(tabs[tabCounter].tab, xcoordinate, ycoordinate, TAB1);
             tabs[tabCounter].fields[i].label = create_label(tabs[tabCounter].tab, xcoordinate, ycoordinate, things[i], TAB1);
-            //tabs[tabCounter].fields[i].bar = create_progress_bar(tabs[tabCounter].tab, xcoordinate, ycoordinate, maxes[i], mins[i]);
             *(tabs[tabCounter].fields[i].value) = (maxes[i]+mins[i])/2;
         }
         tabs[tabCounter].fields[3].counter = create_counter(tabs[tabCounter].tab, 0, 110, TAB1);
@@ -40,13 +39,8 @@ void setUpFields(tab tabs[], int tabCounter, char* things[], float maxes[], floa
         
         lv_style_init(&style_indic);
         lv_style_set_bg_opa(&style_indic, LV_OPA_COVER);
-        //lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_RED));
-        // lv_style_set_bg_grad_color(&style_indic, lv_palette_main(LV_PALETTE_RED));
-        // lv_style_set_bg_grad_dir(&style_indic, LV_GRAD_DIR_HOR);
         
         lv_obj_add_style(tabs[tabCounter].fields[3].bar, &style_indic, LV_PART_INDICATOR);
-        // lv_obj_set_style_bg_color(tabs[tabCounter].fields[3].bar, lv_palette_main(LV_PALETTE_GREEN), 0);
-        // lv_obj_set_style_bg_opa(tabs[tabCounter].fields[3].bar, 0, 0);
 
         for(int i = 0; i<2; i++){
             xcoordinate = -285+180*i; ycoordinate = 180+40*i;
@@ -60,7 +54,7 @@ void setUpFields(tab tabs[], int tabCounter, char* things[], float maxes[], floa
             tabs[tabCounter].fields[6+i].label = create_label(tabs[tabCounter].tab, xcoordinate, ycoordinate, things[6+i], TAB1);
             *(tabs[tabCounter].fields[6+i].value) = (maxes[6+i]+mins[6+i])/2;
         }
-        lv_label_set_recolor(tabs[tabCounter].fields[VOLTAGE_INDEX].counter, true);
+        lv_label_set_recolor(tabs[tabCounter].fields[TAB1_VOLTAGE_INDEX].counter, true);
     }
     else{
         for(int i = 0; i<3; i++){
@@ -68,8 +62,7 @@ void setUpFields(tab tabs[], int tabCounter, char* things[], float maxes[], floa
                 xcoordinate = -250+250*x; ycoordinate = -80+150*i;
                 tabs[tabCounter].fields[3*i+x].counter = create_counter(tabs[tabCounter].tab, xcoordinate, ycoordinate, TAB2);
                 tabs[tabCounter].fields[3*i+x].label = create_label(tabs[tabCounter].tab, xcoordinate, ycoordinate, things[TAB1NUMFIELDS+3*i+x], TAB2);
-                //tabs[tabCounter].fields[3*i+x].bar = create_progress_bar(tabs[tabCounter].tab, xcoordinate, ycoordinate, maxes[TAB1NUMFIELDS+3*i+x], mins[TAB1NUMFIELDS+3*i+x]);
-            }
+                }
         }
         tabs[tabCounter].fields[9].bar = create_progress_bar(tabs[tabCounter].tab, 0, -230, 15000, 0);
         lv_obj_set_width(tabs[tabCounter].fields[9].bar, 760);
@@ -79,9 +72,6 @@ void setUpFields(tab tabs[], int tabCounter, char* things[], float maxes[], floa
         lv_style_set_bg_opa(&style_indic, LV_OPA_COVER);
         lv_label_set_recolor(tabs[tabCounter].fields[TAB2_OIL_TEMPERATURE_INDEX].counter, true);
         lv_label_set_recolor(tabs[tabCounter].fields[TAB2_OIL_PRESSURE_INDEX].counter, true);
-        //lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_RED));
-        // lv_style_set_bg_grad_color(&style_indic, lv_palette_main(LV_PALETTE_RED));
-        // lv_style_set_bg_grad_dir(&style_indic, LV_GRAD_DIR_HOR);
         
         lv_obj_add_style(tabs[tabCounter].fields[9].bar, &style_indic, LV_PART_INDICATOR);
     }
@@ -149,47 +139,59 @@ void makeCircle(tab* tabs, int i){
     lv_obj_set_style_bg_color(tabs[i].circle, lv_palette_main(LV_PALETTE_NONE), 0); // Set color
     lv_obj_align(tabs[i].circle, LV_ALIGN_CENTER, 0, -525);
     lv_obj_set_style_border_width(tabs[i].circle, 0, 0);
+
+    lv_obj_move_background(tabs[i].circle);
+    lv_obj_set_style_anim_time(tabs[i].circle, 0, 0);
+
+    
 }
 
-void updateObject(field object, int value, int index, int page){
-    // if(page && index == LAMBDA_INDEX){
-    //     char buffer[100] = ""; 
-    //     sprintf(buffer, "%.2f", value*LAMBDA_CONVERSION);
-    //     lv_label_set_text(object.counter, buffer);
-    //     lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
-    //     return;
-    // }
-    // if(page && (index == TAB2_OIL_TEMPERATURE_INDEX  || index == TAB2_OIL_PRESSURE_INDEX)){
-    //     char buffer[100] = ""; 
-    //     sprintf(buffer, "%d", value);
-    //     lv_label_set_text(object.counter, buffer);
-    //     return;
-    // }
+void checkValueChange(tab tabs[], int tab, int index, double conversionFactor, int messageIndex1, int messageIndex2, twai_message_t message){
+    if(messageIndex2){
+        if((!tab && index == TAB1_RPM_INDEX) || (tab && index == TAB2_RPM_INDEX)){
+            if(*(tabs[tab].fields[index].value) != (int)((message.data[messageIndex1] << 8 | message.data[messageIndex2])*conversionFactor)){
+                *(tabs[tab].fields[index].value) = (int)((message.data[messageIndex1] << 8 | message.data[messageIndex2])*conversionFactor);
+                updateObject(tabs[tab].fields[index], *(tabs[tab].fields[index].value), index, tab);
+                if((message.data[messageIndex1] << 8 | message.data[messageIndex2])<7500){
+                    lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_BLUE));
+                }
+                else if((message.data[messageIndex1] << 8 | message.data[messageIndex2])<12000){
+                    lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_ORANGE));
+                }
+                else{
+                    lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_RED));
+                }
+            }
+        }
+        else if(*(tabs[tab].fields[index].value) != (int)((message.data[messageIndex1] << 8 | message.data[messageIndex2])*conversionFactor)){
+            *(tabs[tab].fields[index].value) = (int)((message.data[messageIndex1] << 8 | message.data[messageIndex2])*conversionFactor);
+            updateObject(tabs[tab].fields[index], *(tabs[tab].fields[index].value), index, tab);
+        }
+    }
+    else if((tab && index == TAB2_LAMBDA_INDEX) || (!tab && index == TAB1_VOLTAGE_INDEX)){
+        if(*(tabs[tab].fields[index].value) != (int)((message.data[messageIndex1]))){
+            *(tabs[tab].fields[index].value) = (int)((message.data[messageIndex1]));
+            updateObject(tabs[tab].fields[index], (message.data[messageIndex1]), index, tab);
+        }
+    }
+    else{
+        if(*(tabs[tab].fields[index].value) != (int)((message.data[messageIndex1])*conversionFactor)){
+            *(tabs[tab].fields[index].value) = (int)((message.data[messageIndex1])*conversionFactor);
+            updateObject(tabs[tab].fields[index], *(tabs[tab].fields[index].value), index, tab);
+        }
+    }
+}
 
+void updateObject(field object, float value, int index, int page){
+    char buffer[100] = "";
     if(page && index == TAB2_RPM_INDEX){
-        lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
+        lv_bar_set_value(object.bar, (int)value, LV_ANIM_OFF);
         lv_obj_invalidate(object.bar);
         return;
     }
 
-    if(page && index == TAB2_OIL_TEMPERATURE_INDEX && OilTempError){
-        char buffer[100] = "";
-        sprintf(buffer, "#ff0000 %d", value);
-        lv_label_set_text(object.counter, buffer);
-        lv_obj_invalidate(object.counter);
-        return;
-    }
-
-    if(page && index == TAB2_OIL_PRESSURE_INDEX && OilPressureError){
-        char buffer[100] = "";
-        sprintf(buffer, "#ff0000 %d", value);
-        lv_label_set_text(object.counter, buffer);
-        lv_obj_invalidate(object.counter);
-        return;
-    }
-
-    if(index == GEAR_POSITION_SOURCE_INDEX && page){
-        switch (value){
+    else if(page && index == TAB2_GEAR_POSITION_SOURCE_INDEX){
+        switch ((int)value){
             case 0:
                 lv_label_set_text(object.counter, "S");
                 //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
@@ -203,84 +205,38 @@ void updateObject(field object, int value, int index, int page){
                 //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
                 break;
         }
-        lv_obj_invalidate(object.counter);
-        return;
     }
 
-    if(index == FRONT_BRAKE_PRESSURE_INDEX && value > 9000 && page){
-        lv_label_set_text(object.counter, "0");
-        lv_obj_invalidate(object.counter);
-        return;
-    }
-
-    if(page){
-        char buffer[100] = ""; 
-        sprintf(buffer, "%d", value);
+    else if(page && index == TAB2_OIL_TEMPERATURE_INDEX && OilTempError){
+        sprintf(buffer, "#ff0000 %d", (int)value);
         lv_label_set_text(object.counter, buffer);
-        lv_obj_invalidate(object.counter);
-        return;
-    }
-    
-    if(WaterTempError && index == WATER_TEMP_INDEX){
-        char buffer[100] = ""; 
-        sprintf(buffer, "#ff0000 %d", value);
-        lv_label_set_text(object.counter, buffer);
-        lv_obj_invalidate(object.counter);
-        //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
-        return;
-    }
-    
-    if(VoltageError && index == VOLTAGE_INDEX){
-        char buffer[100] = ""; 
-        sprintf(buffer, "#ff0000 %.1f", ((float)value) / 10);
-        lv_label_set_text(object.counter, buffer);
-        lv_obj_invalidate(object.counter);
-        return;
     }
 
-    if(OilPressureError && index == OIL_PRESSURE_INDEX){
-        char buffer[100] = ""; 
-        sprintf(buffer, "#ff0000 %d", value);
+    else if(page && index == TAB2_OIL_PRESSURE_INDEX && OilPressureError){
+        sprintf(buffer, "#ff0000 %d", (int)value);
         lv_label_set_text(object.counter, buffer);
-        lv_obj_invalidate(object.counter);
-        // lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
-        return;
     }
 
-    if(OilTempError && (index == OIL_TEMP_INDEX || index == TAB2_OIL_TEMPERATURE_INDEX)){
-        char buffer[100] = "";
-        sprintf(buffer, "#ff0000 %d", value);
+    else if(index == TAB2_LAMBDA_INDEX && page){
+        sprintf(buffer, "%.2f", value*LAMBDA_CONVERSION);
         lv_label_set_text(object.counter, buffer);
-        lv_obj_invalidate(object.counter);
-        return;
     }
 
-
-    if(index == VOLTAGE_INDEX){
-        char buffer[100] = "";
-        sprintf(buffer, "%.1f", ((float)value)/10);
+    else if(page){
+        sprintf(buffer, "%d", (int)value);
         lv_label_set_text(object.counter, buffer);
-        lv_obj_invalidate(object.counter);
-        return;
     }
-    char buffer[100] = "";
-    sprintf(buffer, "%d", value);
 
-    if(index == GEAR_INDEX && value == 0){
+    else if(index == TAB1_GEAR_INDEX && value == 0){
         lv_label_set_text(object.counter, "N");
-        lv_obj_invalidate(object.counter);
-        return;
     }
 
-    if(index == GEAR_INDEX && value > 6){
+    else if(index == TAB1_GEAR_INDEX && value > 6){
         lv_label_set_text(object.counter, "D");
-        lv_obj_invalidate(object.counter);
-        return;
     }
 
-    if(index == RPM_INDEX){
-        char buffer[100] = ""; 
-        sprintf(buffer, " #ffffff %d ", value);
+    else if(index == TAB1_RPM_INDEX){
+        sprintf(buffer, " #ffffff %d ", (int)value);
         lv_label_set_text(object.counter, buffer);
         lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
         lv_obj_invalidate(object.counter);
@@ -288,174 +244,116 @@ void updateObject(field object, int value, int index, int page){
         return;
     }
 
-    else if((index == WATER_TEMP_INDEX || index == OIL_PRESSURE_INDEX || index == OIL_TEMP_INDEX)){
-        char buffer[100] = ""; 
-        sprintf(buffer, "#ffffff %d", value);
+    else if(WaterTempError && index == TAB1_WATER_TEMP_INDEX){
+        sprintf(buffer, "#ff0000 %d", (int)value);
         lv_label_set_text(object.counter, buffer);
-        lv_obj_invalidate(object.counter);
-        //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
-        return;
     }
+    
+    else if(VoltageError && index == TAB1_VOLTAGE_INDEX){
+        sprintf(buffer, "#ff0000 %.1f", VOLTAGE_CONVERSION*value);
+        lv_label_set_text(object.counter, buffer);
+    }
+
+    else if(OilPressureError && index == TAB1_OIL_PRESSURE_INDEX){
+        sprintf(buffer, "#ff0000 %d", (int)value);
+        lv_label_set_text(object.counter, buffer);
+    }
+
+    else if(OilTempError && (index == TAB1_OIL_TEMP_INDEX)){
+        sprintf(buffer, "#ff0000 %d", (int)value);
+        lv_label_set_text(object.counter, buffer);
+    }
+
+    else if(index < 3){
+        sprintf(buffer, "#ffffff %d", (int)value);
+        lv_label_set_text(object.counter, buffer);
+    }
+
+    else if(index == TAB1_VOLTAGE_INDEX){
+        sprintf(buffer, "%.1f", VOLTAGE_CONVERSION*value);
+        lv_label_set_text(object.counter, buffer);
+    }
+
     else{
+        sprintf(buffer, "%d", (int)value);
         lv_label_set_text(object.counter, buffer);
-        lv_obj_invalidate(object.counter);
-        //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
-        return;
     }
+
+    lv_obj_invalidate(object.counter);
 
 }
 
-void updateArray(tab tabs[]){
-    //while(true){
-        twai_message_t message = recieve_CAN();
-        if((message.identifier/0x100 != 0x7)&&(message.identifier/0x100 !=0x3)) {
+void updateArray(tab tabs[], twai_message_t message){
+    switch(message.identifier){
+        case 0x700:
+            checkValueChange(tabs, TAB1, TAB1_MPH_INDEX, MPH_CONVERSION, 0, 1, message);
+            checkValueChange(tabs, TAB1, TAB1_RPM_INDEX, RPM_CONVERSION, 2, 3, message);
+            checkValueChange(tabs, TAB2, TAB2_RPM_INDEX, RPM_CONVERSION, 2, 3, message);
+            if((message.data[4])<100){
+                VoltageError = 1;
+            }
+            else{
+                VoltageError = 0;
+            }
+            checkValueChange(tabs, TAB1, TAB1_VOLTAGE_INDEX, VOLTAGE_CONVERSION, 4, 0, message);
+            if((message.data[5] << 8 | message.data[6])*WATER_TEMP_CONVERSION>225){
+                WaterTempError = 1;
+            }
+            else{
+                WaterTempError = 0;
+            }
+            checkValueChange(tabs, TAB1, TAB1_WATER_TEMP_INDEX, WATER_TEMP_CONVERSION, 5, 6, message);
+            
+            checkValueChange(tabs, TAB1, TAB1_FUEL_PRESSURE_INDEX, FUEL_PRESSURE_CONVERSION, 7, 0, message);                
+            break;
+        case 0x701:
+            if(((message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION)<10 || ((message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION)>95){ 
+                OilPressureError = 1;
+            }
+            else{
+                OilPressureError = 0;
+            }
+            checkValueChange(tabs, TAB1, TAB1_OIL_PRESSURE_INDEX, OIL_PRESSURE_CONVERSION, 0, 1, message);
+            checkValueChange(tabs, TAB2, TAB2_OIL_PRESSURE_INDEX, OIL_PRESSURE_CONVERSION, 0, 1, message);
+            checkValueChange(tabs, TAB2, TAB2_ABSOLUTE_MANIFOLD_PRESSURE_INDEX, ABSOLUTE_MANIFOLD_PRESSURE_CONVERSION, 2, 3, message);
+            checkValueChange(tabs, TAB2, TAB2_LAMBDA_INDEX, LAMBDA_CONVERSION, 6, 0, message);
+            break;
+        case 0x702:
+
+            if(*(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX].value) != (int)((message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION)){
+                if((int)((message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION)>9000){
+                    if(*(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX].value) != 0){
+                        *(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX].value) = 0;
+                        updateObject(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX], 0, TAB2_FRONT_BRAKE_PRESSURE_INDEX, TAB2);
+                    }
+                }
+                else{
+                    *(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX].value) = (int)(message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION;
+                    updateObject(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX], (message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION, TAB2_FRONT_BRAKE_PRESSURE_INDEX, TAB2);
+                }
+            }
+
             return;
-        }
-            //printf("madeit\n");
-        
-        switch(message.identifier){
-            case 0x700:
-
-                if(*(tabs[TAB1].fields[MPH_INDEX].value) != (message.data[0] << 8 | message.data[1])){
-                    *(tabs[TAB1].fields[MPH_INDEX].value) = (message.data[0] << 8 | message.data[1]);
-                    updateObject(tabs[TAB1].fields[MPH_INDEX], (message.data[0] << 8 | message.data[1])/10, MPH_INDEX, TAB1);
-                }
-
-                if(*(tabs[TAB1].fields[RPM_INDEX].value) != (message.data[2] << 8 | message.data[3])){
-                    *(tabs[TAB1].fields[RPM_INDEX].value) = (message.data[2] << 8 | message.data[3]);
-                    if((message.data[2] << 8 | message.data[3])<7500){
-                        lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_BLUE));
-                    }
-                    else if((message.data[2] << 8 | message.data[3])<12000){
-                        lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_ORANGE));
-                    }
-                    else{
-                        lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_RED));
-                    }
-                    updateObject(tabs[TAB1].fields[RPM_INDEX], (message.data[2] << 8 | message.data[3]), RPM_INDEX, TAB1);
-                    updateObject(tabs[TAB2].fields[TAB2_RPM_INDEX], (message.data[2] << 8 | message.data[3]), TAB2_RPM_INDEX, TAB2);
-                }
-
-                //lv_obj_invalidate(tabs[0].tab);
-                if(*(tabs[TAB1].fields[VOLTAGE_INDEX].value) != (message.data[4])){
-                    *(tabs[TAB1].fields[VOLTAGE_INDEX].value) = (message.data[4]);
-                    if((message.data[4]/10)<10){
-                        VoltageError = 1;
-                    }
-                    else{
-                        VoltageError = 0;
-                    }
-                    updateObject(tabs[TAB1].fields[VOLTAGE_INDEX], (message.data[4]), VOLTAGE_INDEX, TAB1);
-                }
-
-                if(*(tabs[TAB1].fields[WATER_TEMP_INDEX].value) != (int)((message.data[5] << 8 | message.data[6])*WATER_TEMP_CONVERSION)){
-                    *(tabs[TAB1].fields[WATER_TEMP_INDEX].value) = (message.data[5] << 8 | message.data[6])*WATER_TEMP_CONVERSION;
-                    if((message.data[5] << 8 | message.data[6])*WATER_TEMP_CONVERSION>225){
-                        WaterTempError = 1;
-                    }
-                    else{
-                        WaterTempError = 0;
-                    }
-                    updateObject(tabs[TAB1].fields[WATER_TEMP_INDEX], (message.data[5] << 8 | message.data[6])*WATER_TEMP_CONVERSION, WATER_TEMP_INDEX, TAB1);
-                }
-
-                if(*(tabs[TAB1].fields[FUEL_PRESSURE_INDEX].value) != message.data[7]){
-                    *(tabs[TAB1].fields[FUEL_PRESSURE_INDEX].value) = message.data[7];
-                    updateObject(tabs[TAB1].fields[FUEL_PRESSURE_INDEX], (message.data[7]), FUEL_PRESSURE_INDEX, TAB1);
-                }
-
-                
-
-                //lv_obj_invalidate(tabs[0].tab);
-                break;
-            case 0x701:
-
-                if(*(tabs[TAB1].fields[OIL_PRESSURE_INDEX].value) != (int)((message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION)){
-                    *(tabs[TAB1].fields[OIL_PRESSURE_INDEX].value) = (message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION;
-                    if(((message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION)<10 || ((message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION)>95){ 
-                        OilPressureError = 1;
-                    }
-                    else{
-                        OilPressureError = 0;
-                    }
-                    updateObject(tabs[TAB1].fields[OIL_PRESSURE_INDEX], (message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION, OIL_PRESSURE_INDEX, TAB1);
-                    updateObject(tabs[TAB2].fields[TAB2_OIL_PRESSURE_INDEX], (message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION, TAB2_OIL_PRESSURE_INDEX, TAB2);
-
-                }                
-
-                if(*(tabs[TAB2].fields[ABSOLUTE_MANIFOLD_PRESSURE_INDEX].value) != (int)((message.data[2] << 8 | message.data[3])*ABSOLUTE_MANIFOLD_PRESSURE_CONVERSION)){
-                    *(tabs[TAB2].fields[ABSOLUTE_MANIFOLD_PRESSURE_INDEX].value) = ((message.data[2] << 8 | message.data[3])*ABSOLUTE_MANIFOLD_PRESSURE_CONVERSION);
-                    updateObject(tabs[TAB2].fields[ABSOLUTE_MANIFOLD_PRESSURE_INDEX], (message.data[2] << 8 | message.data[3])*ABSOLUTE_MANIFOLD_PRESSURE_CONVERSION, ABSOLUTE_MANIFOLD_PRESSURE_INDEX, TAB2);
-                }
-
-                if(*(tabs[TAB2].fields[LAMBDA_INDEX].value) != ((message.data[6])*LAMBDA_CONVERSION)){
-                    *(tabs[TAB2].fields[LAMBDA_INDEX].value) = ((message.data[6])*LAMBDA_CONVERSION);
-                    updateObject(tabs[TAB2].fields[LAMBDA_INDEX], (message.data[6])*LAMBDA_CONVERSION, LAMBDA_INDEX, TAB2);
-                }
-                break;
-            case 0x702:
-
-                if(*(tabs[TAB2].fields[FRONT_BRAKE_PRESSURE_INDEX].value) != (int)((message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION)){
-                    *(tabs[TAB2].fields[FRONT_BRAKE_PRESSURE_INDEX].value) = (message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION;
-                    updateObject(tabs[TAB2].fields[FRONT_BRAKE_PRESSURE_INDEX], (message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION, FRONT_BRAKE_PRESSURE_INDEX, TAB2);
-                }
-
-                return;
-            case 0x704:
-
-                if(*(tabs[TAB1].fields[GEAR_INDEX].value) != ((message.data[2]))){
-                    *(tabs[TAB1].fields[GEAR_INDEX].value) = ((message.data[2]));
-                    updateObject(tabs[TAB1].fields[GEAR_INDEX], (message.data[2]), GEAR_INDEX, TAB1);
-                }
-                if(*(tabs[TAB1].fields[OIL_TEMP_INDEX].value) != (int)((message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION)){
-                    *(tabs[TAB1].fields[OIL_TEMP_INDEX].value) = ((message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION);
-                    if(((message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION)>240){
-                        OilTempError = 1;
-                    }
-                    else{
-                        OilTempError = 0;
-                    }
-                    updateObject(tabs[TAB1].fields[OIL_TEMP_INDEX], (message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION, OIL_TEMP_INDEX, TAB1);
-                    updateObject(tabs[TAB2].fields[TAB2_OIL_TEMPERATURE_INDEX], (message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION, TAB2_OIL_TEMPERATURE_INDEX, TAB2);
-                }
-
-                // if(*(tabs[TAB1].fields[RPM_INDEX].value) != ((message.data[0]) << 8 | message.data[1])){
-                //     *(tabs[TAB1].fields[RPM_INDEX].value) = ((message.data[0]) << 8 | message.data[1]);
-                //     updateObject(tabs[TAB1].fields[RPM_INDEX], ((message.data[0]) << 8 | message.data[1]), RPM_INDEX, TAB1);
-                //     screenChange = true;
-                // }
-
-                break;
-            case 0x70f:
-                if(*(tabs[TAB2].fields[GEAR_POSITION_SOURCE_INDEX].value) != ((message.data[4]))){
-                    *(tabs[TAB2].fields[GEAR_POSITION_SOURCE_INDEX].value) = ((message.data[4]));
-                    updateObject(tabs[TAB2].fields[GEAR_POSITION_SOURCE_INDEX], (message.data[4]), GEAR_POSITION_SOURCE_INDEX, TAB2);
-                }
-                return;
-            case 0x714:
-                if(*(tabs[TAB2].fields[TANK_PRESSURE_INDEX].value) != (int)((message.data[0] << 8 | message.data[1])*TANK_PRESSURE_CONVERSION)){
-                    *(tabs[TAB2].fields[TANK_PRESSURE_INDEX].value) = ((message.data[0] << 8 | message.data[1])*TANK_PRESSURE_CONVERSION);
-                    updateObject(tabs[TAB2].fields[TANK_PRESSURE_INDEX], (message.data[0] << 8 | message.data[1])*TANK_PRESSURE_CONVERSION, TANK_PRESSURE_INDEX, TAB2);
-                }
-
-                if(*(tabs[TAB2].fields[REGULATOR_PRESSURE_INDEX].value) != (int)((message.data[2] << 8 | message.data[3])*REGULATOR_PRESSURE_CONVERSION)){
-                    *(tabs[TAB2].fields[REGULATOR_PRESSURE_INDEX].value) = (message.data[2] << 8 | message.data[3])*REGULATOR_PRESSURE_CONVERSION;
-                    updateObject(tabs[TAB2].fields[REGULATOR_PRESSURE_INDEX], (message.data[2] << 8 | message.data[3])*REGULATOR_PRESSURE_CONVERSION, REGULATOR_PRESSURE_INDEX, TAB2);
-                }
-
-                if(*(tabs[TAB2].fields[BRAKE_BIAS_INDEX].value) != (message.data[4] << 8 | message.data[5])){
-                    *(tabs[TAB2].fields[BRAKE_BIAS_INDEX].value) = (message.data[4] << 8 | message.data[5]);
-                    updateObject(tabs[TAB2].fields[BRAKE_BIAS_INDEX], (message.data[4] << 8 | message.data[5]), BRAKE_BIAS_INDEX, TAB2);
-                }
-
-                // if(screenChange){
-                //     lvgl_port_lock(-1);
-                //     lv_obj_invalidate(tabs[tab_id].tab);
-                //     lvgl_port_unlock();
-                //     screenChange = 0;
-                // }
-                return;
-        }
+        case 0x704:
+            checkValueChange(tabs, TAB1, TAB1_GEAR_INDEX, GEAR_CONVERSION, 2, 0, message);
+            if(((message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION)>240){
+                OilTempError = 1;
+            }
+            else{
+                OilTempError = 0;
+            }
+            checkValueChange(tabs, TAB1, TAB1_OIL_TEMP_INDEX, OIL_TEMP_CONVERSION, 6, 7, message);
+            checkValueChange(tabs, TAB2, TAB2_OIL_TEMPERATURE_INDEX, OIL_TEMP_CONVERSION, 6, 7, message);
+            break;
+        case 0x70f:
+            checkValueChange(tabs, TAB2, TAB2_GEAR_POSITION_SOURCE_INDEX, GEAR_POSITION_SOURCE_CONVERSION, 4, 0, message);
+            return;
+        case 0x714:
+            checkValueChange(tabs, TAB2, TAB2_TANK_PRESSURE_INDEX, TANK_PRESSURE_CONVERSION, 0, 1, message);
+            checkValueChange(tabs, TAB2, TAB2_REGULATOR_PRESSURE_INDEX, REGULATOR_PRESSURE_CONVERSION, 2, 3, message);
+            checkValueChange(tabs, TAB2, TAB2_BRAKE_BIAS_INDEX, BRAKE_BIAS_CONVERSION, 4, 5, message);
+            return;
+    }
         
         if((WaterTempError || VoltageError || OilPressureError || OilTempError) && (goodZone != 0)){
             errorCode = 1;
@@ -472,7 +370,11 @@ void updateArray(tab tabs[]){
 void warning(tab tabs[]){
     int changed = 0;
     while(true){
-        if((errorCode && !goodZone) && (goodZone != errorCode)){
+        if(esp_timer_get_time()/1000 < 10000 && (errorCode && !goodZone) && (goodZone != errorCode)){
+            changed = 1;
+            errorCode = 0;
+        }
+        else if((errorCode && !goodZone) && (goodZone != errorCode)){
             changed = 1;
             lvgl_port_lock(-1);
             if(tab_id){
@@ -507,11 +409,11 @@ void warning(tab tabs[]){
             lv_obj_set_style_bg_color(tabs[TAB1].circle, lv_palette_main(LV_PALETTE_NONE), 0);
             lv_obj_invalidate(tabs[tab_id].tab);
             lvgl_port_unlock();
-            vTaskDelay(500);
+            vTaskDelay(100);
             changed = 0;
         }
         else{
-            vTaskDelay(500);//#include<unistd.h> usleep();
+            vTaskDelay(100);
         }
     }
 }
@@ -523,28 +425,3 @@ void switchTabID(int tabNum){
 void switchTabView(){
     lv_tabview_set_act(tabview, tab_id, LV_ANIM_OFF);
 }
-
-// void button_init() {
-//     gpio_config_t io_conf = {
-//         .pin_bit_mask = (1ULL << 6), // Select GPIO 6
-//         .mode = GPIO_MODE_INPUT,               // Set as input mode
-//         .pull_up_en = GPIO_PULLUP_ENABLE,      // Enable pull-up (if needed)
-//         .pull_down_en = GPIO_PULLDOWN_DISABLE, // Disable pull-down
-//         .intr_type = GPIO_INTR_NEGEDGE         // Interrupt on falling edge (adjust as needed)
-//     };
-//     gpio_config(&io_conf);
-// }
-
-// esp_err_t SD_init(sdmmc_slot_config_t* SD_config){
-//     const char mountpoint[] = MOUNT_POINT;
-//     sdmmc_host_t host = SDMMC_HOST_DEFAULT();
-//     //host.max_freq_khz = SD_BUS_FREQ;
-//     esp_vfs_fat_mount_config_t mount_config = VFS_FAT_MOUNT_DEFAULT_CONFIG();
-//     mount_config.max_files = 10;
-//     mount_config.format_if_mount_failed = false;
-//     mount_config.allocation_unit_size = 16 * 1024;
-//     ESP_ERROR_CHECK(esp_vfs_fat_sdmmc_mount(mountpoint, &host, SD_config, &mount_config, NULL));
-//     ESP_LOGI(TAG, "SD card has been initialized");
-//     return ESP_OK;
-// }
-

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/components/espressif__esp_lcd_touch_gt911
+# Install script for directory: C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/22DashBoard/components/espressif__esp_lcd_touch_gt911
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

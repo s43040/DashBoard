@@ -1,59 +1,96 @@
-[1/5] cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.2.3\ESP32-S3-Touch-LCD-7-Demo\ESP-IDF\08_lvgl_Porting\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.2_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.2.3/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/build/partition_table/partition-table.bin C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/build/lvgl_porting.bin"
-lvgl_porting.bin binary size 0xc5a20 bytes. Smallest app partition is 0x100000 bytes. 0x3a5e0 bytes (23%) free.
-[2/5] Performing build step for 'bootloader'
-[1/1] cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.2.3\ESP32-S3-Touch-LCD-7-Demo\ESP-IDF\08_lvgl_Porting\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.2_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.2.3/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/build/bootloader/bootloader.bin"
-Bootloader binary size 0x5a30 bytes. 0x25d0 bytes (30%) free.
-[2/3] cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.2.3\components\esptool_py && C:\Espressif\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=C:/Espressif/frameworks/esp-idf-v5.2.3 -D SERIAL_TOOL=C:/Espressif/python_env/idf5.2_py3.11_env/Scripts/python.exe;;C:/Espressif/frameworks/esp-idf-v5.2.3/cesptool.py --chip esp32s3 -p COM5 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 8MB 0x0 bootloader/bootloader.bin 0x10000 lvgl_porting.bin 0x8000 partition_table/partition-table.bin
-esptool.py v4.8.1
-Serial port COM5
-Connecting....
-Chip is ESP32-S3 (QFN56) (revision v0.2)
-Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
-Crystal is 40MHz
-MAC: d8:3b:da:a5:e7:28
-Uploading stub...
-Running stub...
-Stub running...
-Changing baud rate to 460800
-Changed.
-Configuring flash size...
-Flash will be erased from 0x00000000 to 0x00005fff...
-Flash will be erased from 0x00010000 to 0x000d5fff...
-Flash will be erased from 0x00008000 to 0x00008fff...
-SHA digest in image updated
-Compressed 23088 bytes to 14188...
-Writing at 0x00000000... (100 %)
-Wrote 23088 bytes (14188 compressed) at 0x00000000 in 0.7 seconds (effective 282.9 kbit/s)...
-Hash of data verified.
-Compressed 809504 bytes to 339365...
-Writing at 0x00010000... (4 %)
-Writing at 0x0001d487... (9 %)
-Writing at 0x0002de1c... (14 %)
-Writing at 0x000501a5... (19 %)
-Writing at 0x000645b3... (23 %)
-Writing at 0x0006eeb5... (28 %)
-Writing at 0x0007760f... (33 %)
-Writing at 0x0007d678... (38 %)
-Writing at 0x000838c7... (42 %)
-Writing at 0x00089bd6... (47 %)
-Writing at 0x0008fa44... (52 %)
-Writing at 0x0009561f... (57 %)
-Writing at 0x0009af81... (61 %)
-Writing at 0x000a0dbd... (66 %)
-Writing at 0x000a6e5e... (71 %)
-Writing at 0x000ac894... (76 %)
-Writing at 0x000b2912... (80 %)
-Writing at 0x000b91e9... (85 %)
-Writing at 0x000c32b2... (90 %)
-Writing at 0x000ca94b... (95 %)
-Writing at 0x000d0d6f... (100 %)
-Wrote 809504 bytes (339365 compressed) at 0x00010000 in 8.5 seconds (effective 763.8 kbit/s)...
-Hash of data verified.
-Compressed 3072 bytes to 103...
-Writing at 0x00008000... (100 %)
-Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 525.0 kbit/s)...
-Hash of data verified.
-
-Leaving...
-Hard resetting via RTS pin...
-omponents/esptool_py/esptool/esptool.py;--chip;esp32s3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/08_lvgl_Porting/build -P C:/Espressif/frameworks/esp-idf-v5.2.3/components/esptool_py/run_serial_tool.cmake"
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3820,len:0x19fc
+load:0x403c9700,len:0x4
+load:0x403c9704,len:0xe8c
+load:0x403cc700,len:0x313c
+entry 0x403c9940
+[0;32mI (27) boot: ESP-IDF v5.2.3-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time May  1 2025 14:54:04[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot: efuse block revision: v1.3[0m
+[0;32mI (39) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (49) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (54) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (58) boot: Enabling RNG early entropy source...[0m
+[0;32mI (64) boot: Partition Table:[0m
+[0;32mI (67) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (75) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (82) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (89) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (97) boot: End of partition table[0m
+[0;32mI (101) esp_image: segment 0: paddr=00010020 vaddr=3c050020 size=7a904h (502020) map[0m
+[0;32mI (184) esp_image: segment 1: paddr=0008a92c vaddr=3fc9a800 size=031a4h ( 12708) load[0m
+[0;32mI (187) esp_image: segment 2: paddr=0008dad8 vaddr=40374000 size=02540h (  9536) load[0m
+[0;32mI (192) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=4db40h (318272) map[0m
+[0;32mI (246) esp_image: segment 4: paddr=000ddb68 vaddr=40376540 size=1422ch ( 82476) load[0m
+[0;32mI (270) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (271) boot: Disabling RNG early entropy source...[0m
+[0;32mI (282) cpu_start: Multicore app[0m
+[0;32mI (283) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (283) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (286) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (291) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (296) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (301) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (307) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (312) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (318) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (324) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (330) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (336) MSPI Timing: PSRAM timing tuning index: 4[0m
+[0;32mI (340) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (345) esp_psram: Speed: 80MHz[0m
+[0;32mI (378) mmu_psram: Read only data copied and mapped to SPIRAM[0m
+[0;32mI (676) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (685) cpu_start: Pro cpu start user code[0m
+[0;32mI (685) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (685) cpu_start: Application information:[0m
+[0;32mI (688) cpu_start: Project name:     lvgl_porting[0m
+[0;32mI (693) cpu_start: App version:      ce6a7c1-dirty[0m
+[0;32mI (699) cpu_start: Compile time:     May  1 2025 14:53:54[0m
+[0;32mI (705) cpu_start: ELF file SHA256:  5fcbbc641...[0m
+[0;32mI (710) cpu_start: ESP-IDF:          v5.2.3-dirty[0m
+[0;32mI (716) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (720) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (725) cpu_start: Chip rev:         v0.2[0m
+[0;32mI (730) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (737) heap_init: At 3FC9E9F0 len 0004AD20 (299 KiB): RAM[0m
+[0;32mI (743) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (749) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (756) heap_init: At 600FE010 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (762) esp_psram: Adding pool of 7680K of PSRAM memory to heap allocator[0m
+[0;32mI (770) spi_flash: detected chip: gd[0m
+[0;32mI (774) spi_flash: flash io: qio[0m
+[0;33mW (778) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (788) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (795) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (802) main_task: Started on CPU0[0m
+[0;32mI (806) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (815) main_task: Calling app_main()[0m
+[0;32mI (819) example: Install RGB LCD panel driver[0m
+[0;32mI (872) example: Initialize RGB LCD panel[0m
+[0;32mI (873) example: Initialize I2C bus[0m
+[0;32mI (874) example: Initialize GPIO[0m
+[0;32mI (874) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (883) example: Initialize Touch LCD[0m
+[0;32mI (1288) example: Initialize I2C panel IO[0m
+[0;32mI (1288) example: Initialize touch controller GT911[0m
+[0;33mW (1288) GT911: Unable to initialize the I2C address[0m
+[0;32mI (1293) GT911: TouchPad_ID:0x39,0x31,0x31[0m
+[0;32mI (1298) GT911: TouchPad_Config_Version:88[0m
+[0;32mI (1305) lv_port: Create LVGL task[0m
+[Warn]	(0.124, +124)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Warn]	(2.128, +2004)	 lv_palette_main: Invalid palette: 255 	(in lv_color.c line #285)
+[0;32mI (3473) gpio: GPIO[19]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3474) gpio: GPIO[20]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (3482) CAN: Driver initialized
+ [0m
+[0;32mI (3486) CAN: Driver started
+ [0m
+[0;32mI (3489) gpio: GPIO[6]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
