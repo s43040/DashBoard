@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "lvgl_porting",
-    "project_version":    "ce6a7c1-dirty",
+    "project_version":    "43db95d-dirty",
     "project_path":       "C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/22DashBoard",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.2.3",
     "build_dir":          "C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/22DashBoard/build",

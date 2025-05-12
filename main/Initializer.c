@@ -207,15 +207,15 @@ void updateObject(field object, float value, int index, int page){
         }
     }
 
-    else if(page && index == TAB2_OIL_TEMPERATURE_INDEX && OilTempError){
-        sprintf(buffer, "#ff0000 %d", (int)value);
-        lv_label_set_text(object.counter, buffer);
-    }
+    // else if(page && index == TAB2_OIL_TEMPERATURE_INDEX && OilTempError){
+    //     sprintf(buffer, "#ff0000 %d", (int)value);
+    //     lv_label_set_text(object.counter, buffer);
+    // }
 
-    else if(page && index == TAB2_OIL_PRESSURE_INDEX && OilPressureError){
-        sprintf(buffer, "#ff0000 %d", (int)value);
-        lv_label_set_text(object.counter, buffer);
-    }
+    // else if(page && index == TAB2_OIL_PRESSURE_INDEX && OilPressureError){
+    //     sprintf(buffer, "#ff0000 %d", (int)value);
+    //     lv_label_set_text(object.counter, buffer);
+    // }
 
     else if(index == TAB2_LAMBDA_INDEX && page){
         sprintf(buffer, "%.2f", value*LAMBDA_CONVERSION);
@@ -244,25 +244,25 @@ void updateObject(field object, float value, int index, int page){
         return;
     }
 
-    else if(WaterTempError && index == TAB1_WATER_TEMP_INDEX){
-        sprintf(buffer, "#ff0000 %d", (int)value);
-        lv_label_set_text(object.counter, buffer);
-    }
+    // else if(WaterTempError && index == TAB1_WATER_TEMP_INDEX){
+    //     sprintf(buffer, "#ff0000 %d", (int)value);
+    //     lv_label_set_text(object.counter, buffer);
+    // }
     
-    else if(VoltageError && index == TAB1_VOLTAGE_INDEX){
-        sprintf(buffer, "#ff0000 %.1f", VOLTAGE_CONVERSION*value);
-        lv_label_set_text(object.counter, buffer);
-    }
+    // else if(VoltageError && index == TAB1_VOLTAGE_INDEX){
+    //     sprintf(buffer, "#ff0000 %.1f", VOLTAGE_CONVERSION*value);
+    //     lv_label_set_text(object.counter, buffer);
+    // }
 
-    else if(OilPressureError && index == TAB1_OIL_PRESSURE_INDEX){
-        sprintf(buffer, "#ff0000 %d", (int)value);
-        lv_label_set_text(object.counter, buffer);
-    }
+    // else if(OilPressureError && index == TAB1_OIL_PRESSURE_INDEX){
+    //     sprintf(buffer, "#ff0000 %d", (int)value);
+    //     lv_label_set_text(object.counter, buffer);
+    // }
 
-    else if(OilTempError && (index == TAB1_OIL_TEMP_INDEX)){
-        sprintf(buffer, "#ff0000 %d", (int)value);
-        lv_label_set_text(object.counter, buffer);
-    }
+    // else if(OilTempError && (index == TAB1_OIL_TEMP_INDEX)){
+    //     sprintf(buffer, "#ff0000 %d", (int)value);
+    //     lv_label_set_text(object.counter, buffer);
+    // }
 
     else if(index < 3){
         sprintf(buffer, "#ffffff %d", (int)value);
