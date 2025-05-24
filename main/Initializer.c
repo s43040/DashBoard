@@ -70,7 +70,7 @@ void setUpFields(tab tabs[], int tabCounter, char* things[], float maxes[], floa
         *(tabs[tabCounter].fields[9].value) = 7500;
         lv_style_init(&style_indic);
         lv_style_set_bg_opa(&style_indic, LV_OPA_COVER);
-        lv_label_set_recolor(tabs[tabCounter].fields[TAB2_OIL_TEMPERATURE_INDEX].counter, true);
+        lv_label_set_recolor(tabs[tabCounter].fields[TAB2_OIL_TEMP_INDEX].counter, true);
         lv_label_set_recolor(tabs[tabCounter].fields[TAB2_OIL_PRESSURE_INDEX].counter, true);
         
         lv_obj_add_style(tabs[tabCounter].fields[9].bar, &style_indic, LV_PART_INDICATOR);
@@ -146,70 +146,47 @@ void makeCircle(tab* tabs, int i){
     
 }
 
-void checkValueChange(tab tabs[], int tab, int index, double conversionFactor, int messageIndex1, int messageIndex2, twai_message_t message){
-    if(messageIndex2){
-        if((!tab && index == TAB1_RPM_INDEX) || (tab && index == TAB2_RPM_INDEX)){
-            if(*(tabs[tab].fields[index].value) != (int)((message.data[messageIndex1] << 8 | message.data[messageIndex2])*conversionFactor)){
-                *(tabs[tab].fields[index].value) = (int)((message.data[messageIndex1] << 8 | message.data[messageIndex2])*conversionFactor);
-                updateObject(tabs[tab].fields[index], *(tabs[tab].fields[index].value), index, tab);
-                if((message.data[messageIndex1] << 8 | message.data[messageIndex2])<7500){
-                    lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_BLUE));
-                }
-                else if((message.data[messageIndex1] << 8 | message.data[messageIndex2])<12000){
-                    lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_ORANGE));
-                }
-                else{
-                    lv_style_set_bg_color(&style_indic, lv_palette_main(LV_PALETTE_RED));
-                }
-            }
-        }
-        else if(*(tabs[tab].fields[index].value) != (int)((message.data[messageIndex1] << 8 | message.data[messageIndex2])*conversionFactor)){
-            *(tabs[tab].fields[index].value) = (int)((message.data[messageIndex1] << 8 | message.data[messageIndex2])*conversionFactor);
-            updateObject(tabs[tab].fields[index], *(tabs[tab].fields[index].value), index, tab);
-        }
-    }
-    else if((tab && index == TAB2_LAMBDA_INDEX) || (!tab && index == TAB1_VOLTAGE_INDEX)){
-        if(*(tabs[tab].fields[index].value) != (int)((message.data[messageIndex1]))){
-            *(tabs[tab].fields[index].value) = (int)((message.data[messageIndex1]));
-            updateObject(tabs[tab].fields[index], (message.data[messageIndex1]), index, tab);
-        }
-    }
-    else{
-        if(*(tabs[tab].fields[index].value) != (int)((message.data[messageIndex1])*conversionFactor)){
-            *(tabs[tab].fields[index].value) = (int)((message.data[messageIndex1])*conversionFactor);
-            updateObject(tabs[tab].fields[index], *(tabs[tab].fields[index].value), index, tab);
-        }
-    }
-}
-
 void updateObject(field object, float value, int index, int page){
     char buffer[100] = "";
-    if(page && index == TAB2_RPM_INDEX){
+    if(page && (index == TAB2_RPM_INDEX) && ((int)*(object.value) != (int)value)){
+        *(object.value) = (int)value;
         lv_bar_set_value(object.bar, (int)value, LV_ANIM_OFF);
         lv_obj_invalidate(object.bar);
+        printf("changed page 2 RPM\n");
         return;
     }
 
     else if(page && index == TAB2_GEAR_POSITION_SOURCE_INDEX){
         switch ((int)value){
             case 0:
-                lv_label_set_text(object.counter, "S");
+                if(strcmp(lv_label_get_text(object.counter), "S")){
+                    lv_label_set_text(object.counter, "S");
+                    printf("changed S\n");
+                }
                 //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
                 break;
             case 1:
-                lv_label_set_text(object.counter, "E");
+                if(strcmp(lv_label_get_text(object.counter), "E")){
+                    lv_label_set_text(object.counter, "E");
+                    printf("changed E\n");
+                }
                 //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
                 break;
             case 2:
-                lv_label_set_text(object.counter, "D");
+                if(strcmp(lv_label_get_text(object.counter), "D")){
+                    lv_label_set_text(object.counter, "D");
+                    printf("changed D\n");
+                }
                 //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
                 break;
         }
     }
 
-    // else if(page && index == TAB2_OIL_TEMPERATURE_INDEX && OilTempError){
+    // else if(page && index == TAB2_OIL_TEMP_INDEX && OilTempError){
     //     sprintf(buffer, "#ff0000 %d", (int)value);
-    //     lv_label_set_text(object.counter, buffer);
+    //     if(strcmp(lv_label_get_text(object.label), buffer)){
+    //         lv_label_set_text(object.counter, buffer);
+    //     }
     // }
 
     // else if(page && index == TAB2_OIL_PRESSURE_INDEX && OilPressureError){
@@ -218,29 +195,44 @@ void updateObject(field object, float value, int index, int page){
     // }
 
     else if(index == TAB2_LAMBDA_INDEX && page){
-        sprintf(buffer, "%.2f", value*LAMBDA_CONVERSION);
-        lv_label_set_text(object.counter, buffer);
+        sprintf(buffer, "%.2f", value);
+        if(strcmp(lv_label_get_text(object.counter), buffer)){
+            lv_label_set_text(object.counter, buffer);
+            printf("changed lambda\n");
+        }
     }
 
     else if(page){
         sprintf(buffer, "%d", (int)value);
-        lv_label_set_text(object.counter, buffer);
+        if(strcmp(lv_label_get_text(object.counter), buffer)){
+            lv_label_set_text(object.counter, buffer);
+            printf("changed 2nd page default\n");
+        }
     }
 
     else if(index == TAB1_GEAR_INDEX && value == 0){
-        lv_label_set_text(object.counter, "N");
+        if(strcmp(lv_label_get_text(object.counter), "N")){
+            lv_label_set_text(object.counter, "N");
+            printf("changed gear N\n");
+        }
     }
 
     else if(index == TAB1_GEAR_INDEX && value > 6){
-        lv_label_set_text(object.counter, "D");
+        if(strcmp(lv_label_get_text(object.counter), "D")){
+            lv_label_set_text(object.counter, "D");
+            printf("changed gear D\n");
+        }
     }
 
     else if(index == TAB1_RPM_INDEX){
         sprintf(buffer, " #ffffff %d ", (int)value);
-        lv_label_set_text(object.counter, buffer);
-        lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
-        lv_obj_invalidate(object.counter);
-        lv_obj_invalidate(object.bar);
+        if(strcmp(lv_label_get_text(object.counter), buffer)){
+            lv_label_set_text(object.counter, buffer);
+            lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
+            lv_obj_invalidate(object.counter);
+            lv_obj_invalidate(object.bar);
+            printf("changed rpm\n");
+        }
         return;
     }
 
@@ -266,17 +258,26 @@ void updateObject(field object, float value, int index, int page){
 
     else if(index < 3){
         sprintf(buffer, "#ffffff %d", (int)value);
-        lv_label_set_text(object.counter, buffer);
+        if(strcmp(lv_label_get_text(object.counter), buffer)){
+            lv_label_set_text(object.counter, buffer);
+            printf("changed whites\n");
+        }
     }
 
     else if(index == TAB1_VOLTAGE_INDEX){
         sprintf(buffer, "%.1f", VOLTAGE_CONVERSION*value);
-        lv_label_set_text(object.counter, buffer);
+        if(strcmp(lv_label_get_text(object.counter), buffer)){
+            lv_label_set_text(object.counter, buffer);
+            printf("changed voltage\n");
+        }
     }
 
     else{
         sprintf(buffer, "%d", (int)value);
-        lv_label_set_text(object.counter, buffer);
+        if(strcmp(lv_label_get_text(object.counter), buffer)){
+            lv_label_set_text(object.counter, buffer);
+            printf("changed default\n");
+        }
     }
 
     lv_obj_invalidate(object.counter);
@@ -286,25 +287,24 @@ void updateObject(field object, float value, int index, int page){
 void updateArray(tab tabs[], twai_message_t message){
     switch(message.identifier){
         case 0x700:
-            checkValueChange(tabs, TAB1, TAB1_MPH_INDEX, MPH_CONVERSION, 0, 1, message);
-            checkValueChange(tabs, TAB1, TAB1_RPM_INDEX, RPM_CONVERSION, 2, 3, message);
-            checkValueChange(tabs, TAB2, TAB2_RPM_INDEX, RPM_CONVERSION, 2, 3, message);
+            updateObject(tabs[TAB1].fields[TAB1_MPH_INDEX], (message.data[0] << 8 | message.data[1]) * MPH_CONVERSION, TAB1_MPH_INDEX, TAB1);
+            updateObject(tabs[TAB1].fields[TAB1_RPM_INDEX], (message.data[2] << 8 | message.data[3]) * RPM_CONVERSION, TAB1_RPM_INDEX, TAB1);
+            updateObject(tabs[TAB2].fields[TAB2_RPM_INDEX], (message.data[2] << 8 | message.data[3]) * RPM_CONVERSION, TAB2_RPM_INDEX, TAB2);
             if((message.data[4])<100){
                 VoltageError = 1;
             }
             else{
                 VoltageError = 0;
             }
-            checkValueChange(tabs, TAB1, TAB1_VOLTAGE_INDEX, VOLTAGE_CONVERSION, 4, 0, message);
+            updateObject(tabs[TAB1].fields[TAB1_VOLTAGE_INDEX], (message.data[4]) * RPM_CONVERSION, TAB1_VOLTAGE_INDEX, TAB1);
             if((message.data[5] << 8 | message.data[6])*WATER_TEMP_CONVERSION>225){
                 WaterTempError = 1;
             }
             else{
                 WaterTempError = 0;
             }
-            checkValueChange(tabs, TAB1, TAB1_WATER_TEMP_INDEX, WATER_TEMP_CONVERSION, 5, 6, message);
-            
-            checkValueChange(tabs, TAB1, TAB1_FUEL_PRESSURE_INDEX, FUEL_PRESSURE_CONVERSION, 7, 0, message);                
+            updateObject(tabs[TAB1].fields[TAB1_WATER_TEMP_INDEX], (message.data[5] << 8 | message.data[6]) * WATER_TEMP_CONVERSION, TAB1_WATER_TEMP_INDEX, TAB1);
+            updateObject(tabs[TAB1].fields[TAB1_FUEL_PRESSURE_INDEX], (message.data[7]) * FUEL_PRESSURE_CONVERSION, TAB1_FUEL_PRESSURE_INDEX, TAB1);  
             break;
         case 0x701:
             if(((message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION)<10 || ((message.data[0] << 8 | message.data[1])*OIL_PRESSURE_CONVERSION)>95){ 
@@ -313,58 +313,49 @@ void updateArray(tab tabs[], twai_message_t message){
             else{
                 OilPressureError = 0;
             }
-            checkValueChange(tabs, TAB1, TAB1_OIL_PRESSURE_INDEX, OIL_PRESSURE_CONVERSION, 0, 1, message);
-            checkValueChange(tabs, TAB2, TAB2_OIL_PRESSURE_INDEX, OIL_PRESSURE_CONVERSION, 0, 1, message);
-            checkValueChange(tabs, TAB2, TAB2_ABSOLUTE_MANIFOLD_PRESSURE_INDEX, ABSOLUTE_MANIFOLD_PRESSURE_CONVERSION, 2, 3, message);
-            checkValueChange(tabs, TAB2, TAB2_LAMBDA_INDEX, LAMBDA_CONVERSION, 6, 0, message);
+            updateObject(tabs[TAB1].fields[TAB1_OIL_PRESSURE_INDEX], (message.data[0] << 8 | message.data[1]) * OIL_PRESSURE_CONVERSION, TAB1_OIL_PRESSURE_INDEX, TAB1);
+            updateObject(tabs[TAB2].fields[TAB2_OIL_PRESSURE_INDEX], (message.data[2] << 8 | message.data[3]) * OIL_PRESSURE_CONVERSION, TAB2_OIL_PRESSURE_INDEX, TAB2);
+            updateObject(tabs[TAB2].fields[TAB2_ABSOLUTE_MANIFOLD_PRESSURE_INDEX], (message.data[2] << 8 | message.data[3]) * ABSOLUTE_MANIFOLD_PRESSURE_CONVERSION, TAB2_ABSOLUTE_MANIFOLD_PRESSURE_INDEX, TAB2);
+            updateObject(tabs[TAB2].fields[TAB2_LAMBDA_INDEX], (message.data[6]) * LAMBDA_CONVERSION, TAB2_LAMBDA_INDEX, TAB2);
             break;
         case 0x702:
-
-            if(*(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX].value) != (int)((message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION)){
                 if((int)((message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION)>9000){
-                    if(*(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX].value) != 0){
-                        *(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX].value) = 0;
-                        updateObject(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX], 0, TAB2_FRONT_BRAKE_PRESSURE_INDEX, TAB2);
-                    }
+                    updateObject(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX], 0, TAB2_FRONT_BRAKE_PRESSURE_INDEX, TAB2);
                 }
                 else{
-                    *(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX].value) = (int)(message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION;
                     updateObject(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX], (message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION, TAB2_FRONT_BRAKE_PRESSURE_INDEX, TAB2);
                 }
-            }
 
             return;
         case 0x704:
-            checkValueChange(tabs, TAB1, TAB1_GEAR_INDEX, GEAR_CONVERSION, 2, 0, message);
+            updateObject(tabs[TAB1].fields[TAB1_GEAR_INDEX], (message.data[2])*GEAR_CONVERSION, TAB1_GEAR_INDEX, TAB1);
             if(((message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION)>240){
                 OilTempError = 1;
             }
             else{
                 OilTempError = 0;
             }
-            checkValueChange(tabs, TAB1, TAB1_OIL_TEMP_INDEX, OIL_TEMP_CONVERSION, 6, 7, message);
-            checkValueChange(tabs, TAB2, TAB2_OIL_TEMPERATURE_INDEX, OIL_TEMP_CONVERSION, 6, 7, message);
+            updateObject(tabs[TAB1].fields[TAB1_OIL_TEMP_INDEX], (message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION, TAB1_OIL_TEMP_INDEX, TAB1);
+            updateObject(tabs[TAB2].fields[TAB2_OIL_TEMP_INDEX], (message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION, TAB2_OIL_TEMP_INDEX, TAB2);
             break;
         case 0x70f:
-            checkValueChange(tabs, TAB2, TAB2_GEAR_POSITION_SOURCE_INDEX, GEAR_POSITION_SOURCE_CONVERSION, 4, 0, message);
+            updateObject(tabs[TAB2].fields[TAB2_GEAR_POSITION_SOURCE_INDEX], (message.data[4])*GEAR_POSITION_SOURCE_CONVERSION, TAB2_GEAR_POSITION_SOURCE_INDEX, TAB2);
             return;
         case 0x714:
-            checkValueChange(tabs, TAB2, TAB2_TANK_PRESSURE_INDEX, TANK_PRESSURE_CONVERSION, 0, 1, message);
-            checkValueChange(tabs, TAB2, TAB2_REGULATOR_PRESSURE_INDEX, REGULATOR_PRESSURE_CONVERSION, 2, 3, message);
-            checkValueChange(tabs, TAB2, TAB2_BRAKE_BIAS_INDEX, BRAKE_BIAS_CONVERSION, 4, 5, message);
+            updateObject(tabs[TAB2].fields[TAB2_TANK_PRESSURE_INDEX], (message.data[0] << 8 | message.data[1])*TANK_PRESSURE_CONVERSION, TAB2_TANK_PRESSURE_INDEX, TAB2);
+            updateObject(tabs[TAB2].fields[TAB2_REGULATOR_PRESSURE_INDEX], (message.data[2] << 8 | message.data[3])*REGULATOR_PRESSURE_CONVERSION, TAB2_REGULATOR_PRESSURE_INDEX, TAB2);
+            updateObject(tabs[TAB2].fields[TAB2_BRAKE_BIAS_INDEX], (message.data[4] << 8 | message.data[5])*BRAKE_BIAS_CONVERSION, TAB2_BRAKE_BIAS_INDEX, TAB2);
             return;
     }
         
-        if((WaterTempError || VoltageError || OilPressureError || OilTempError) && (goodZone != 0)){
-            errorCode = 1;
-            goodZone = 0;
-        }
-        else if(!(WaterTempError || VoltageError || OilPressureError || OilTempError)){
-            errorCode = 0;
-            goodZone = 1;
-        }
-        
-    //}
+    if((WaterTempError || VoltageError || OilPressureError || OilTempError) && (goodZone != 0)){
+        errorCode = 1;
+        goodZone = 0;
+    }
+    else if(!(WaterTempError || VoltageError || OilPressureError || OilTempError)){
+        errorCode = 0;
+        goodZone = 1;
+    }
 }
 
 void warning(tab tabs[]){
