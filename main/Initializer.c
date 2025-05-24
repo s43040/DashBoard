@@ -148,11 +148,11 @@ void makeCircle(tab* tabs, int i){
 
 void updateObject(field object, float value, int index, int page){
     char buffer[100] = "";
+    int countChanged = 0;
     if(page && (index == TAB2_RPM_INDEX) && ((int)*(object.value) != (int)value)){
         *(object.value) = (int)value;
         lv_bar_set_value(object.bar, (int)value, LV_ANIM_OFF);
         lv_obj_invalidate(object.bar);
-        printf("changed page 2 RPM\n");
         return;
     }
 
@@ -161,21 +161,20 @@ void updateObject(field object, float value, int index, int page){
             case 0:
                 if(strcmp(lv_label_get_text(object.counter), "S")){
                     lv_label_set_text(object.counter, "S");
-                    printf("changed S\n");
+                    countChanged = 1;
                 }
-                //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
                 break;
             case 1:
                 if(strcmp(lv_label_get_text(object.counter), "E")){
                     lv_label_set_text(object.counter, "E");
-                    printf("changed E\n");
+                    countChanged = 1;
                 }
                 //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
                 break;
             case 2:
                 if(strcmp(lv_label_get_text(object.counter), "D")){
                     lv_label_set_text(object.counter, "D");
-                    printf("changed D\n");
+                    countChanged = 1;
                 }
                 //lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
                 break;
@@ -198,7 +197,7 @@ void updateObject(field object, float value, int index, int page){
         sprintf(buffer, "%.2f", value);
         if(strcmp(lv_label_get_text(object.counter), buffer)){
             lv_label_set_text(object.counter, buffer);
-            printf("changed lambda\n");
+            countChanged = 1;
         }
     }
 
@@ -206,21 +205,21 @@ void updateObject(field object, float value, int index, int page){
         sprintf(buffer, "%d", (int)value);
         if(strcmp(lv_label_get_text(object.counter), buffer)){
             lv_label_set_text(object.counter, buffer);
-            printf("changed 2nd page default\n");
+            countChanged = 1;
         }
     }
 
     else if(index == TAB1_GEAR_INDEX && value == 0){
         if(strcmp(lv_label_get_text(object.counter), "N")){
             lv_label_set_text(object.counter, "N");
-            printf("changed gear N\n");
+            countChanged = 1;
         }
     }
 
     else if(index == TAB1_GEAR_INDEX && value > 6){
         if(strcmp(lv_label_get_text(object.counter), "D")){
             lv_label_set_text(object.counter, "D");
-            printf("changed gear D\n");
+            countChanged = 1;
         }
     }
 
@@ -231,36 +230,15 @@ void updateObject(field object, float value, int index, int page){
             lv_bar_set_value(object.bar, value, LV_ANIM_OFF);
             lv_obj_invalidate(object.counter);
             lv_obj_invalidate(object.bar);
-            printf("changed rpm\n");
         }
         return;
     }
-
-    // else if(WaterTempError && index == TAB1_WATER_TEMP_INDEX){
-    //     sprintf(buffer, "#ff0000 %d", (int)value);
-    //     lv_label_set_text(object.counter, buffer);
-    // }
-    
-    // else if(VoltageError && index == TAB1_VOLTAGE_INDEX){
-    //     sprintf(buffer, "#ff0000 %.1f", VOLTAGE_CONVERSION*value);
-    //     lv_label_set_text(object.counter, buffer);
-    // }
-
-    // else if(OilPressureError && index == TAB1_OIL_PRESSURE_INDEX){
-    //     sprintf(buffer, "#ff0000 %d", (int)value);
-    //     lv_label_set_text(object.counter, buffer);
-    // }
-
-    // else if(OilTempError && (index == TAB1_OIL_TEMP_INDEX)){
-    //     sprintf(buffer, "#ff0000 %d", (int)value);
-    //     lv_label_set_text(object.counter, buffer);
-    // }
 
     else if(index < 3){
         sprintf(buffer, "#ffffff %d", (int)value);
         if(strcmp(lv_label_get_text(object.counter), buffer)){
             lv_label_set_text(object.counter, buffer);
-            printf("changed whites\n");
+            countChanged = 1;
         }
     }
 
@@ -268,7 +246,7 @@ void updateObject(field object, float value, int index, int page){
         sprintf(buffer, "%.1f", VOLTAGE_CONVERSION*value);
         if(strcmp(lv_label_get_text(object.counter), buffer)){
             lv_label_set_text(object.counter, buffer);
-            printf("changed voltage\n");
+            countChanged = 1;
         }
     }
 
@@ -276,11 +254,12 @@ void updateObject(field object, float value, int index, int page){
         sprintf(buffer, "%d", (int)value);
         if(strcmp(lv_label_get_text(object.counter), buffer)){
             lv_label_set_text(object.counter, buffer);
-            printf("changed default\n");
+            countChanged = 1;
         }
     }
-
-    lv_obj_invalidate(object.counter);
+    if(countChanged){
+        lv_obj_invalidate(object.counter);
+    }
 
 }
 
