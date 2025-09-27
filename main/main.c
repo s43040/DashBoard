@@ -13,6 +13,7 @@
 
 
 #include "driver/gpio.h"
+#include "driver/ledc.h"
 #include "esp_err.h"
 #include "esp_log.h"
 #include "esp_intr_alloc.h"
@@ -48,20 +49,11 @@ void IRAM_ATTR gpio_isr_handler(void* arg) {//debounce
 
 void app_main()
 {
-    waveshare_esp32_s3_rgb_lcd_init(); // Initialize the Waveshare ESP32-S3 RGB LCD 
-    // wavesahre_rgb_lcd_bl_on();  //Turn on the screen backlight 
-    // wavesahre_rgb_lcd_bl_off(); //Turn off the screen backlight 
+    waveshare_esp32_s3_rgb_lcd_init();
+    //ledc_set_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0, 255);
+    //ledc_update_duty(LEDC_LOW_SPEED_MODE, LEDC_CHANNEL_0);
     
-    ESP_LOGI(TAG, "Display LVGL demos");
-    // Lock the mutex due to the LVGL APIs are not thread-safe
     if (lvgl_port_lock(-1)) {
-        
-        // // lv_demo_stress();
-        // // lv_demo_benchmark();
-        // // lv_demo_music();
-        // lv_demo_widgets();
-        // // example_lvgl_demo_ui();
-        // // Release the mutex
         
         lv_obj_t *scr = lv_scr_act();
         LV_IMG_DECLARE(MizzouRacingLogoBlackBackground);
@@ -72,48 +64,26 @@ void app_main()
         lvgl_port_unlock();
         vTaskDelay(2000);
 
-        
 
-        // sdmmc_slot_config_t SD = SDMMC_SLOT_CONFIG_DEFAULT();
-        // SD.width = 128; //maybe
-        // SD.flags |= SDMMC_SLOT_FLAG_INTERNAL_PULLUP;//def not right
-        // SD.d0 = 37; //def not right
-        // SD.clk = 36;//def not right
-        // SD.cmd = 35;//def not right
-        // ESP_ERROR_CHECK(SD_init(&SD));
         lvgl_port_lock(-1);
-        char* tab1Labels[50] = {"Water Temp (F)", "Oil Pressure (psi)", "Oil Temp (F)", "RPM", "Fuel Pressure (psi)", "MPH", "Gear", "Voltage (V)", "Tank Pressure (psi)", "Reg Pressure (psi)", "Lambda (LA)", "Manif Pressure (psi)", "F Brake Pressure (psi)", "Brake Bias (%)", "Gear Position Source", "Oil Temp (F)", "Oil Pressure (psi)"};
-        float maxes[] = {250, 100, 250, 15000, 60, 90, 6, 145, 2000, 250, 255, 20, 2000, 100, 2, 250, 100};
-        float mins[] = {32, 0, 32, 0, 0, 0, 0, 90, 0, 0, 0, 0, 0, 0, 0, 32, 0};//get rid of these
+        char* tab1Labels[50] = {"Pack Voltage(V)", "Lowest Cell Voltate(V)", "LV Battery(V)", "RPM", "Pack Temp(C)", "Inverter Temp(C)", "Motor Temp(C)", "High Cell Temp(C)", "Tail Brake(psi)", "Brake Bias(%)", "Cell Balance Delta", "", "", "", "", "", ""};
         tabview = lv_tabview_create(scr, LV_DIR_TOP, 0);
         setTabView(tabview);
         tab tabs[2];
-        for(int i = 0; i<2; i++){
+        for(int i = 0; i<NUMTABS; i++){
             tabs[i].tab = lv_tabview_add_tab(tabview, "Tab 1");
             //lv_obj_set_size(tabs[i].tab, 800, 480);
             lv_obj_clear_flag(tabs[i].tab, LV_OBJ_FLAG_SCROLLABLE);
             if(!i){
                 makeCircle(tabs, i);
             }
-            setUpFields(tabs, i, tab1Labels, maxes, mins);
+            setUpFields(tabs, i, tab1Labels);
         }
 
-        //setTabID(TAB1);
         lv_obj_set_style_bg_color(tabview, lv_palette_lighten(LV_PALETTE_YELLOW, 1), LV_PART_MAIN);
-
-        // float testHigh[8] = {200, 90, 225, 14000, 55, 80, 6, 14};
-        // float testLow[8] = {40, 10, 40, 1000, 20, 20, 0, 9.5};
-        // lv_obj_set_size(tabview, 800, 480);
-        // lv_obj_clear_flag(tabview, LV_OBJ_FLAG_SCROLLABLE);
-
         configure_CAN();
 
-        
-        //button_init();
-
         xTaskCreatePinnedToCore(warning, "WARNING", 4096, tabs, 5, NULL, 1);
-
-        //xTaskCreate(button_task, "BUTTON", 4096, NULL, 6, NULL);
 
         gpio_config_t io_conf = {};
         io_conf.intr_type = GPIO_INTR_NEGEDGE;  // Interrupt on falling edge
@@ -127,53 +97,51 @@ void app_main()
         
         
         lvgl_port_unlock();
-        while(1){
+        twai_message_t messageArray[NUM_CASES] = {0};
+        int messageNumber = 0;
+        twai_message_t tempMessage;
+        int messageIdentifiers[NUM_CASES] = {0, 3, 4, 1713, 1714};//removed , 5
+        while(true){
             if(counter != changed){
-                // float filter = 0;
-                // currentUpdateTime = esp_timer_get_time();
-                // while((esp_timer_get_time() - currentUpdateTime)/1000 > 3){
-                //     filter = filter * 0.1 + 0.9 * (1-gpio_get_level(GPIO_INPUT_IO));
-                // }
-                // if(filter > 0.75){
-                usleep(5);
+                usleep(10);
                 if(!gpio_get_level(GPIO_INPUT_IO)){
                     lvgl_port_lock(-1);
-                    //lv_tabview_set_act(tabview, counter, LV_ANIM_OFF);
                     switchTabID();
                     switchTabView();
                     changed = counter;
                     lv_obj_invalidate(tabs[counter].tab);
-                    
                     lvgl_port_unlock();
                     last_interrupt_time = esp_timer_get_time();
-                    //printf("succeeded to change\n");
                     usleep(0);
                 }
                 else{
                     counter = !counter;
                     disabled = 0;
-                    //printf("%d    failed to change\n", disabled);
                     gpio_intr_enable(GPIO_INPUT_IO);
                     usleep(0);
                 }
             }
             currentUpdateTime = esp_timer_get_time();
-            if((currentUpdateTime - lastUpdateTime)/1000 > 100){
-                lastUpdateTime = currentUpdateTime;
-                //lvgl_port_lock(-1);
-                for(int i = 0; i<6; i++){
-                    updateArray(tabs);
+            if((currentUpdateTime - lastUpdateTime)/1000 > 90){
+                while(messageNumber != NUM_CASES){
+                    tempMessage = recieve_CAN();
+                    if(tempMessage.identifier%0x700 == messageIdentifiers[messageNumber] && tempMessage.identifier != 0){
+                        messageArray[messageNumber] = tempMessage;
+                        messageNumber++;
+                    }
                 }
-                //lvgl_port_unlock();
+                messageNumber = 0;
+                lastUpdateTime = currentUpdateTime;
+                for(int i = 0; i<NUM_CASES; i++){
+                    updateArray(tabs, messageArray[i]);
+                }
                 usleep(0);
             }
             if(disabled && ((currentUpdateTime - last_interrupt_time)/1000 > 400)){
-                //printf("asdf\n");
                 disabled = 0;
                 gpio_intr_enable(GPIO_INPUT_IO);
                 usleep(0);
             }
-            //printf("%d\n", gpio_get_level(GPIO_INPUT_IO));
         }
     }
 }

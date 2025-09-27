@@ -17,7 +17,7 @@ twai_message_t recieve_CAN(){
 
 void configure_CAN(){
     twai_general_config_t g_config = TWAI_GENERAL_CONFIG_DEFAULT(GPIO_NUM_20,GPIO_NUM_19,TWAI_MODE_NORMAL);
-    twai_timing_config_t t_config = TWAI_TIMING_CONFIG_1MBITS();
+    twai_timing_config_t t_config = TWAI_TIMING_CONFIG_500KBITS();
     twai_filter_config_t f_config = TWAI_FILTER_CONFIG_ACCEPT_ALL();
 
      if (twai_driver_install(&g_config, &t_config, &f_config) == ESP_OK) {

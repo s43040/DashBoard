@@ -31,46 +31,46 @@
 #include "lvgl.h"
 
 #define TAB1 0
-#define WATER_TEMP_INDEX 0
-#define OIL_PRESSURE_INDEX 1
-#define OIL_TEMP_INDEX 2
-#define RPM_INDEX 3
-#define FUEL_PRESSURE_INDEX 4
-#define MPH_INDEX 5
-#define GEAR_INDEX 6
-#define VOLTAGE_INDEX 7
+#define TAB1_PACK_VOLTAGE_INDEX 0 //DONE
+#define TAB1_LOWEST_CELL_VOLTAGE_INDEX 1 //DONE
+#define TAB1_GL_VOLTAGE_INDEX 2 //DONE
+#define TAB1_RPM_INDEX 3 //DONE
+#define TAB1_PACK_TEMP_INDEX 4 //DONE
+#define TAB1_INVERTER_TEMP_INDEX 5 //DONE
+#define TAB1_MOTOR_TEMP_INDEX 6 //DONE
+#define TAB1_HIGHEST_CELL_TEMP_INDEX 7 //DONE
+
 
 #define TAB2 1
-#define TANK_PRESSURE_INDEX 0 //not in config?
-#define REGULATOR_PRESSURE_INDEX 1 //not in config?
-#define LAMBDA_INDEX 2
-#define ABSOLUTE_MANIFOLD_PRESSURE_INDEX 3
-#define FRONT_BRAKE_PRESSURE_INDEX 4
-#define BRAKE_BIAS_INDEX 5
-#define GEAR_POSITION_SOURCE_INDEX 6
-#define TAB2_OIL_TEMPERATURE_INDEX 7
-#define TAB2_OIL_PRESSURE_INDEX 8
+#define TAB2_REAR_BREAK_PRESSURE_INDEX 0 //DONE
+#define TAB2_BRAKE_BIAS_INDEX 1 //DONE
+#define TAB2_CELL_BALANCE_DELTA_INDEX 2
+
 #define TAB2_RPM_INDEX 9
 
 
-#define OIL_TEMP_CONVERSION 0.1
-#define WATER_TEMP_CONVERSION 0.1
-#define OIL_PRESSURE_CONVERSION 0.0145038
-#define ABSOLUTE_MANIFOLD_PRESSURE_CONVERSION 0.0145038
-#define TANK_PRESSURE_CONVERSION 0.145038
-#define REGULATOR_PRESSURE_CONVERSION 0.0145038
-#define FRONT_BRAKE_PRESSURE_CONVERSION 0.145038
-#define LAMBDA_CONVERSION 0.01
+
+#define PACK_VOLTAGE_CONVERSION 0.1
+#define MOTOR_TEMP_CONVERSION 0.1
+#define GL_VOLTAGE_CONVERSION 0.1
+#define RPM_CONVERSION 0.1
+#define PACK_TEMP_CONVERSION 0.1
+#define HIGHEST_CELL_TEMP_CONVERSION 1
+#define INVERTER_TEMP_CONVERSION 0.1
+#define REAR_BREAK_PRESSURE_CONVERSION 0.1
+#define BRAKE_BIAS_CONVERSION 0.01
+#define LOWEST_CELL_VOLTAGE_CONVERSION 0.0001
+#define CELL_BALANCE_DELTA_CONVERSION 0.1
 
 #define TAB1NUMFIELDS 8
-#define TAB2NUMFIELDS 8
 #define NUMTABS 2
+#define NUM_CASES 5
 
 struct{
     lv_obj_t* label;
     lv_obj_t* bar;
     lv_obj_t* counter;
-    int* value;
+    float* value;
 } typedef field;
 
 struct{
@@ -80,9 +80,9 @@ struct{
     lv_obj_t* circle;
 } typedef tab;
 
-void setUpFields(tab tabs[], int tabCounter, char* things[], float* max, float* min);
+void setUpFields(tab tabs[], int tabCounter, char* names[]);
 lv_obj_t * create_progress_bar(lv_obj_t *parent, int x, int y, float max, float min);
-void updateObject(field object, int value, int index, int page);
+void updateObject(field object, float value, int index, int page);
 lv_obj_t * create_label(lv_obj_t *parent, int x, int y, char* name, int tabNum);
 lv_obj_t * create_counter(lv_obj_t *parent, int x, int y, int tabNum);
 void changePage(field* fields);
@@ -91,7 +91,7 @@ void setTabView(lv_obj_t * e);
 void makeButton(tab tabs[], int);
 void makeCircle(tab*, int);
 void warning(tab tabs[]);
-void updateArray(tab tabs[]);
+void updateArray(tab tabs[], twai_message_t message);
 void button_init();
 void button_task(void *arg);
 void switchTabID();

@@ -1,0 +1,11 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\Espressif\frameworks\esp-idf-v5.2.3\ESP32-S3-Touch-LCD-7-Demo\ESP-IDF\EVDashBoard\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.2_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.2.3/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/EVDashBoard/build/bootloader/bootloader.bin"
+Bootloader binary size 0x5a30 bytes. 0x25d0 bytes (30%) free.
+[2/7] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/Initializer.c.obj
+In file included from C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/EVDashBoard/main/Initializer.h:1,
+                 from C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/EVDashBoard/main/Initializer.c:1:
+C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/EVDashBoard/main/waveshare_rgb_lcd_port.h:68:20: warning: 'TAG' defined but not used [-Wunused-variable]
+   68 | static const char *TAG = "example";
+      |                    ^~~
+[3/7] Linking C static library esp-idf\main\libmain.a
+ninja: build stopped: interrupted by user.
