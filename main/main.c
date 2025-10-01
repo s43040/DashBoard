@@ -100,7 +100,7 @@ void app_main()
         twai_message_t messageArray[NUM_CASES] = {0};
         int messageNumber = 0;
         twai_message_t tempMessage;
-        int messageIdentifiers[NUM_CASES] = {0, 3, 4, 1713, 1714};//removed , 5
+        int messageIdentifiers[NUM_CASES] = {0, 3, 4, 1713, 1714, 165};//removed , 5
         while(true){
             if(counter != changed){
                 usleep(10);

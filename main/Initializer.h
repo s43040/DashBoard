@@ -64,7 +64,7 @@
 
 #define TAB1NUMFIELDS 8
 #define NUMTABS 2
-#define NUM_CASES 5
+#define NUM_CASES 6
 
 struct{
     lv_obj_t* label;

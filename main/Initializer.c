@@ -30,7 +30,7 @@ void setUpFields(tab tabs[], int tabCounter, char* names[]){
         }
         tabs[tabCounter].fields[3].counter = create_counter(tabs[tabCounter].tab, 0, 110, TAB1);
         tabs[tabCounter].fields[3].label = create_label(tabs[tabCounter].tab, 0, 110, names[3], TAB1);
-        tabs[tabCounter].fields[3].bar = create_progress_bar(tabs[tabCounter].tab, 0, -230, 80, 0);
+        tabs[tabCounter].fields[3].bar = create_progress_bar(tabs[tabCounter].tab, 0, -230, 6500, 0);
         lv_obj_set_width(tabs[tabCounter].fields[3].bar, 760);
         lv_obj_set_height(tabs[tabCounter].fields[3].bar, 60);
         
@@ -231,6 +231,9 @@ void updateArray(tab tabs[], twai_message_t message){
                 *(tabs[TAB2].fields[TAB2_CELL_BALANCE_DELTA_INDEX].value) = (((message.data[2] << 8 | message.data[3])-(message.data[0] << 8 | message.data[1]))*CELL_BALANCE_DELTA_CONVERSION);
                 updateObject(tabs[TAB2].fields[TAB2_CELL_BALANCE_DELTA_INDEX], *(tabs[TAB2].fields[TAB2_CELL_BALANCE_DELTA_INDEX].value), TAB2_CELL_BALANCE_DELTA_INDEX, TAB2);
             }
+            
+            return;
+        case 0x0A5:
             checkValueChange(tabs, TAB1, TAB1_RPM_INDEX, RPM_CONVERSION, 2, 3, message);
             checkValueChange(tabs, TAB2, TAB2_RPM_INDEX, RPM_CONVERSION, 2, 3, message);
             return;
