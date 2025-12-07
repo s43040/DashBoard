@@ -149,10 +149,12 @@ void makeCircle(tab* tabs, int i){
 void updateObject(field object, float value, int index, int page){
     char buffer[100] = "";
     int countChanged = 0;
-    if(page && (index == TAB2_RPM_INDEX) && ((int)*(object.value) != (int)value)){
-        *(object.value) = (int)value;
-        lv_bar_set_value(object.bar, (int)value, LV_ANIM_OFF);
-        lv_obj_invalidate(object.bar);
+    if(page && (index == TAB2_RPM_INDEX)){
+        if(((int)*(object.value) != (int)value)){
+            *(object.value) = (int)value;
+            lv_bar_set_value(object.bar, (int)value, LV_ANIM_OFF);
+            lv_obj_invalidate(object.bar);
+        }
         return;
     }
 
@@ -298,13 +300,12 @@ void updateArray(tab tabs[], twai_message_t message){
             updateObject(tabs[TAB2].fields[TAB2_LAMBDA_INDEX], (message.data[6]) * LAMBDA_CONVERSION, TAB2_LAMBDA_INDEX, TAB2);
             break;
         case 0x702:
-                if((int)((message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION)>9000){
-                    updateObject(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX], 0, TAB2_FRONT_BRAKE_PRESSURE_INDEX, TAB2);
-                }
-                else{
-                    updateObject(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX], (message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION, TAB2_FRONT_BRAKE_PRESSURE_INDEX, TAB2);
-                }
-
+            if((int)((message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION)>9000){
+                updateObject(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX], 0, TAB2_FRONT_BRAKE_PRESSURE_INDEX, TAB2);
+            }
+            else{
+                updateObject(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX], (message.data[4] << 8 | message.data[5])*FRONT_BRAKE_PRESSURE_CONVERSION, TAB2_FRONT_BRAKE_PRESSURE_INDEX, TAB2);
+            }
             return;
         case 0x704:
             updateObject(tabs[TAB1].fields[TAB1_GEAR_INDEX], (message.data[2])*GEAR_CONVERSION, TAB1_GEAR_INDEX, TAB1);
@@ -367,9 +368,7 @@ void warning(tab tabs[]){
                 lv_obj_set_style_bg_color(tabs[TAB1].circle, lv_palette_main(LV_PALETTE_RED), 0);
                 lv_obj_invalidate(tabs[TAB1].tab);
                 lvgl_port_unlock();
-                vTaskDelay(200);
-                
-                
+                vTaskDelay(200);  
             }
             errorCode = 0;
         }

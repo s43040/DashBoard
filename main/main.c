@@ -127,8 +127,9 @@ void app_main()
                     tempMessage = recieve_CAN();
                     if(tempMessage.identifier%0x700 == messageIdentifiers[messageNumber] && tempMessage.identifier != 0){
                         messageArray[messageNumber] = tempMessage;
+                        // printf("message %d\n", messageIdentifiers[messageNumber]);
                         messageNumber++;
-                        //printf("message %d\n", messageIdentifiers[messageNumber]);
+                        
                     }
                     //printf("%d\n", (int)tempMessage.identifier);
                 }

@@ -1,0 +1,15 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM4 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM4 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x403743c0: _DoubleExceptionVector at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:564
+[0m
+[0;33m--- 0x4037d898: _xt_panic at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/arch/xtensa/panic_handler_asm.S:30
+[0m
+[0;33m--- 0x403743c5: _DoubleExceptionVector at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:567
+[0m
+[0;33m--- 0x403743c0: _DoubleExceptionVector at C:/Espressif/frameworks/esp-idf-v5.2.3/components/xtensa/xtensa_vectors.S:564
+[0m
+[0;33m--- 0x4037d890: _xt_panic at C:/Espressif/frameworks/esp-idf-v5.2.3/components/esp_system/port/arch/xtensa/panic_handler_asm.S:28
+[0m
+[0m
