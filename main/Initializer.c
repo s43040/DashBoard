@@ -148,11 +148,12 @@ void makeCircle(tab* tabs, int i){
 
 void updateObject(field object, float value, int index, int page){
     char buffer[100] = "";
-    if(page && (index == TAB2_RPM_INDEX) && ((int)*(object.value) != (int)value)){
-        *(object.value) = (int)value;
-        lv_bar_set_value(object.bar, (int)value, LV_ANIM_OFF);
-        lv_obj_invalidate(object.bar);
-        printf("changed page 2 RPM\n");
+    if(page && (index == TAB2_RPM_INDEX)){
+        if(((int)*(object.value) != (int)value)){
+            *(object.value) = (int)value;
+            lv_bar_set_value(object.bar, (int)value, LV_ANIM_OFF);
+            lv_obj_invalidate(object.bar);
+        }
         return;
     }
 
