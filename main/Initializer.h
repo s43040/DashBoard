@@ -40,6 +40,9 @@
 #define TAB1_GEAR_INDEX 6
 #define TAB1_VOLTAGE_INDEX 7
 
+#define RPM_MAX 15000
+#define RPM_MIN 0
+
 #define TAB2 1
 #define TAB2_TANK_PRESSURE_INDEX 0 //not in config?
 #define TAB2_REGULATOR_PRESSURE_INDEX 1 //not in config?
@@ -87,9 +90,9 @@ struct{
     lv_obj_t* circle;
 } typedef tab;
 
-void setUpFields(tab tabs[], int tabCounter, char* things[], float* max, float* min);
+void setUpFields(tab tabs[], int tabCounter, char* things[]);
 lv_obj_t * create_progress_bar(lv_obj_t *parent, int x, int y, float max, float min);
-void updateObject(field object, float value, int index, int page);
+void updateObject(field object, int value, float conversionFactor, int index, int page);
 lv_obj_t * create_label(lv_obj_t *parent, int x, int y, char* name, int tabNum);
 lv_obj_t * create_counter(lv_obj_t *parent, int x, int y, int tabNum);
 void changePage(field* fields);
@@ -98,10 +101,8 @@ void setTabView(lv_obj_t * e);
 void makeButton(tab tabs[], int);
 void makeCircle(tab*, int);
 void warning(tab tabs[]);
-void updateArray(tab tabs[], twai_message_t message);
+void updateScreen(tab tabs[], twai_message_t messageArray[], int messageCount);
 void button_init();
 void button_task(void *arg);
-void switchTabID();
-int getTabID();
 void switchTabView();
 // esp_err_t SD_init(sdmmc_slot_config_t* SD_config);

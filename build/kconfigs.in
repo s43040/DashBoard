@@ -52,3 +52,4 @@ source "C:/Espressif/frameworks/esp-idf-v5.2.3/components/wear_levelling/Kconfig
 source "C:/Espressif/frameworks/esp-idf-v5.2.3/components/wifi_provisioning/Kconfig"
 source "C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/22DashBoard/components/espressif__esp_lcd_touch/Kconfig"
 source "C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/22DashBoard/components/lvgl__lvgl/Kconfig"
+source "C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/22DashBoard/managed_components/espressif__esp_tinyusb/Kconfig"

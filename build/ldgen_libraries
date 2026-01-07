@@ -67,4 +67,6 @@ C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/22DashB
 C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/22DashBoard/build/esp-idf/lvgl__lvgl/liblvgl__lvgl.a
 C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/22DashBoard/build/esp-idf/espressif__esp_lcd_touch/libespressif__esp_lcd_touch.a
 C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/22DashBoard/build/esp-idf/espressif__esp_lcd_touch_gt911/libespressif__esp_lcd_touch_gt911.a
+C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/22DashBoard/build/esp-idf/espressif__tinyusb/libespressif__tinyusb.a
+C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/22DashBoard/build/esp-idf/espressif__esp_tinyusb/libespressif__esp_tinyusb.a
 C:/Espressif/frameworks/esp-idf-v5.2.3/ESP32-S3-Touch-LCD-7-Demo/ESP-IDF/22DashBoard/build/esp-idf/main/libmain.a

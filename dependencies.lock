@@ -11,6 +11,38 @@ dependencies:
       path: C:\Espressif\frameworks\esp-idf-v5.2.3\ESP32-S3-Touch-LCD-7-Demo\ESP-IDF\22DashBoard\components\espressif__esp_lcd_touch_gt911
       type: local
     version: 1.1.1~1
+  espressif/esp_tinyusb:
+    component_hash: 5e37c53a10518f40b288a48afec4ab549784be9e6eb74add699a30395543418a
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.0'
+    - name: espressif/tinyusb
+      registry_url: https://components.espressif.com
+      require: public
+      version: 0.*
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    targets:
+    - esp32s2
+    - esp32s3
+    version: 1.0.3
+  espressif/tinyusb:
+    component_hash: 5ea9d3b6d6b0734a0a0b3491967aa0e1bece2974132294dbda5dd2839b247bfa
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    targets:
+    - esp32s2
+    - esp32s3
+    - esp32p4
+    - esp32h4
+    version: 0.19.0~2
   idf:
     source:
       type: idf
@@ -24,8 +56,9 @@ dependencies:
 direct_dependencies:
 - espressif/esp_lcd_touch
 - espressif/esp_lcd_touch_gt911
+- espressif/esp_tinyusb
 - idf
 - lvgl/lvgl
-manifest_hash: d5d266152de678f38563fb78535c96ea22d9ead88642e70bb4e988de7ac24ddd
+manifest_hash: 052689b4b7acfc9d0f8b4ffccf72474e5d40c3cb4b053076ec2de182479ad71d
 target: esp32s3
 version: 2.0.0

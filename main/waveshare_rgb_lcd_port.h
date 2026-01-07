@@ -13,7 +13,7 @@
 #include "lv_demos.h"
 #include "lvgl_port.h"
 
-#define CONFIG_EXAMPLE_LCD_TOUCH_CONTROLLER_GT911 1 // 1 initiates the touch, 0 closes the touch.
+#define CONFIG_EXAMPLE_LCD_TOUCH_CONTROLLER_GT911 0 // 1 initiates the touch, 0 closes the touch.
 
 #define I2C_MASTER_SCL_IO           9       /*!< GPIO number used for I2C master clock */
 #define I2C_MASTER_SDA_IO           8       /*!< GPIO number used for I2C master data  */
