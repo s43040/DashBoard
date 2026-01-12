@@ -52,6 +52,7 @@ void app_main(){
         //**********************************************************************************
         //Splash screen
         lv_obj_t *scr = lv_scr_act();
+        lv_disp_set_rotation(lv_disp_get_default(), LV_DISP_ROT_180);
         LV_IMG_DECLARE(MizzouRacingLogoBlackBackground);
         lv_obj_t *img = lv_img_create(scr);
         lv_obj_set_style_bg_color(scr, lv_palette_lighten(LV_PALETTE_NONE, 1), LV_PART_MAIN);
