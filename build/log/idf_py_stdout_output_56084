@@ -1,0 +1,171 @@
+[0;32mI (658) main_task: Calling app_main()[0m
+[0;32mI (659) example: Install RGB LCD panel driver[0m
+[0;32mI (691) example: Initialize RGB LCD panel[0m
+[0;32mI (695) lv_port: Create LVGL task[0m
+[Warn]	(0.050, +50)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[0;32mI (41) boot: ESP-IDF v5.2.3-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Dec 17 2025 17:05:06[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (43) boot: chip revision: v0.2[0m
+[0;32mI (43) boot: efuse block revision: v1.3[0m
+[0;32mI (44) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (45) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (45) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (45) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (45) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (46) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (48) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (49) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (50) boot: End of partition table[0m
+[0;32mI (50) esp_image: segment 0: paddr=00010020 vaddr=3c050020 size=78874h (493684) map[0m
+[0;32mI (125) esp_image: segment 1: paddr=0008889c vaddr=3fc99000 size=030d4h ( 12500) load[0m
+[0;32mI (128) esp_image: segment 2: paddr=0008b978 vaddr=40374000 size=046a0h ( 18080) load[0m
+[0;32mI (133) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=48efch (298748) map[0m
+[0;32mI (177) esp_image: segment 4: paddr=000d8f24 vaddr=403786a0 size=10884h ( 67716) load[0m
+[0;32mI (200) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (201) boot: Disabling RNG early entropy source...[0m
+[0;32mI (555) main_task: Started on CPU0[0m
+[0;32mI (556) main_task: Calling app_main()[0m
+[0;32mI (557) example: Install RGB LCD panel driver[0m
+[0;32mI (589) example: Initialize RGB LCD panel[0m
+[0;32mI (593) lv_port: Create LVGL task[0m
+[Warn]	(0.050, +50)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Warn]	(2.056, +2006)	 lv_palette_main: Invalid palette: 255 	(in lv_color.c line #285)
+[0;32mI (2687) gpio: GPIO[16]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2688) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (2689) CAN: Driver initialized
+ [0m
+[0;32mI (2689) CAN: Driver started
+ [0m
+[0;32mI (2689) gpio: GPIO[6]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0
+Temp message id: 0

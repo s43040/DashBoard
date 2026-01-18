@@ -1,0 +1,35 @@
+[0;32mI (41) boot: ESP-IDF v5.2.6-dirty 2nd stage bootloader[0m
+[0;32mI (42) boot: compile time Jan 12 2026 14:57:56[0m
+[0;32mI (42) boot: Multicore bootloader[0m
+[0;32mI (42) boot: chip revision: v0.2[0m
+[0;32mI (43) boot: efuse block revision: v1.3[0m
+[0;32mI (44) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (44) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (44) boot.esp32s3: SPI Mode       : QIO[0m
+[0;32mI (44) boot.esp32s3: SPI Flash Size : 8MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (44) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (45) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (47) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (48) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (49) boot: End of partition table[0m
+[0;32mI (49) esp_image: segment 0: paddr=00010020 vaddr=3c050020 size=77bc4h (490436) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=00087bec vaddr=3fc99300 size=0313ch ( 12604) load[0m
+[0;32mI (125) esp_image: segment 2: paddr=0008ad30 vaddr=40374000 size=052e8h ( 21224) load[0m
+[0;32mI (129) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=44094h (278676) map[0m
+[0;32mI (171) esp_image: segment 4: paddr=000d40bc vaddr=403792e8 size=0ff64h ( 65380) load[0m
+[0;32mI (193) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (195) boot: Disabling RNG early entropy source...[0m
+[0;32mI (549) main_task: Started on CPU0[0m
+[0;32mI (550) main_task: Calling app_main()[0m
+[0;32mI (551) example: Install RGB LCD panel driver[0m
+[0;32mI (583) example: Initialize RGB LCD panel[0m
+[0;32mI (587) lv_port: Create LVGL task[0m
+0[Warn]	(0.050, +50)	 lv_palette_lighten: Invalid palette: 255 	(in lv_color.c line #318)
+[Warn]	(2.056, +2006)	 lv_palette_main: Invalid palette: 255 	(in lv_color.c line #285)
+[0;32mI (2682) CAN: Driver initialized
+ [0m
+[0;32mI (2682) CAN: Driver started
+ [0m
+[0;32mI (2683) gpio: GPIO[6]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m

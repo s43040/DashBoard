@@ -29,7 +29,7 @@
 #include "driver/gpio.h"
 
 
-#define GPIO_INPUT_IO  6  // Change to your GPIO pin
+#define GPIO_INPUT_IO  13  // Change to your GPIO pin
 #define ESP_INTR_FLAG_DEFAULT 0
 
 volatile int currentTab = 0;
@@ -131,6 +131,7 @@ void app_main(){
             if((esp_timer_get_time() - lastUpdateTime)/1000 > 90){
                 while(messageNumber != messageCount){
                     tempMessage = recieve_CAN();
+                    printf("Temp message id: %ld\n", tempMessage.identifier);
                     if(tempMessage.identifier%0x700 == messageIdentifiers[messageNumber] && tempMessage.identifier != 0){
                         messageArray[messageNumber] = tempMessage;
                         printf("message: \"%d\"\n", messageIdentifiers[messageNumber]);

@@ -6,12 +6,14 @@ int errorCode = 0;
 
 
 void setUpFields(tab tabs[], int tabCounter, char* things[]){
+    //sets up value variables
     tabs[tabCounter].fields = (field*)malloc(10*sizeof(field));
     for(int i = 0; i<10; i++){
         tabs[tabCounter].fields[i].value = (int*)malloc(sizeof(int));
     }
 
     int xcoordinate, ycoordinate;
+    //sets up the structs for every variable on tab1
     if(!tabCounter){
         for(int i = 0; i<3; i++){
             xcoordinate = -270+270*i; ycoordinate = -65+abs(-30+30*i);
@@ -42,6 +44,7 @@ void setUpFields(tab tabs[], int tabCounter, char* things[]){
         }
         lv_label_set_recolor(tabs[tabCounter].fields[TAB1_VOLTAGE_INDEX].counter, true);
     }
+    // sets up the variable structs for tab2
     else{
         for(int i = 0; i<3; i++){
             for(int x = 0; x<3; x++){
@@ -71,6 +74,7 @@ lv_obj_t * create_counter(lv_obj_t *parent, int x, int y, int tabNum){
     y-=5;
     lv_obj_t* counter = lv_label_create(parent);
     if(y==105 && !tabNum){
+        // set rpm font
         LV_FONT_DECLARE(font_roboto_120_4bpp);
         lv_obj_set_style_text_font(counter, &font_roboto_120_4bpp, 0);
         y-=20;
@@ -80,12 +84,14 @@ lv_obj_t * create_counter(lv_obj_t *parent, int x, int y, int tabNum){
         lv_obj_set_style_text_font(counter, &font_roboto_72_4bpp, 0);
     }
     if(y<150 && !tabNum){
+        //make the ones in the circle white
         char buffer[100] = ""; 
         sprintf(buffer, "#ffffff 12345");
         lv_label_set_recolor(counter, 1);
         lv_label_set_text(counter, buffer);
     }
     else{
+        // set every other counter text
         lv_label_set_text(counter, "999");
     }
     lv_obj_align(counter, LV_ALIGN_CENTER, x, y-50);
@@ -97,6 +103,7 @@ lv_obj_t * create_label(lv_obj_t *parent, int x, int y, char* name, int tabNum){
     LV_FONT_DECLARE(font_roboto_24_4bpp);
     lv_obj_set_style_text_font(label, &font_roboto_24_4bpp, 0);
     if(y<150 && !tabNum){  
+        // if in circle, make it white
         char buffer[100] = ""; 
         sprintf(buffer, "#ffffff %s", name);
         lv_label_set_recolor(label, 1);
@@ -136,7 +143,9 @@ void updateObject(field object, int value, float conversionFactor, int index, in
     char buffer[100] = "";
     int countChanged = 0;
     float newValue = value*conversionFactor;
+    // buffer to put string in. Count changed to know if redraw is needed. Conversion for the float values
     if(page && (index == TAB2_RPM_INDEX)){
+        // rpm tab2 gets its own if because it only has a bar
         if(((int)*(object.value) != (int)newValue)){
             *(object.value) = (int)newValue;
             lv_bar_set_value(object.bar, (int)newValue, LV_ANIM_OFF);
@@ -146,6 +155,7 @@ void updateObject(field object, int value, float conversionFactor, int index, in
     }
 
     else if(page && index == TAB2_GEAR_POSITION_SOURCE_INDEX){
+        //gear position source has weird values
         switch ((int)newValue){
             case 0:
                 if(strcmp(lv_label_get_text(object.counter), "S")){
@@ -243,7 +253,9 @@ void updateScreen(tab tabs[], twai_message_t messageArray[], int messageCount){
     static int VoltageError = 0;
     static int OilPressureError = 0;
     static int OilTempError = 0;
+    // Using static variables so they retain value for each run.
     for(int i = 0; i < messageCount; i++){
+        //go through every message and set values according to hex number
         twai_message_t message = messageArray[i];
         switch(message.identifier){
             case 0x700:
@@ -285,7 +297,7 @@ void updateScreen(tab tabs[], twai_message_t messageArray[], int messageCount){
                 else{
                     updateObject(tabs[TAB2].fields[TAB2_FRONT_BRAKE_PRESSURE_INDEX], (message.data[4] << 8 | message.data[5]), FRONT_BRAKE_PRESSURE_CONVERSION, TAB2_FRONT_BRAKE_PRESSURE_INDEX, TAB2);
                 }
-                return;
+                break;
             case 0x704:
                 updateObject(tabs[TAB1].fields[TAB1_GEAR_INDEX], (message.data[2]), GEAR_CONVERSION, TAB1_GEAR_INDEX, TAB1);
                 if(((message.data[6] << 8 | message.data[7])*OIL_TEMP_CONVERSION)>240){
@@ -299,17 +311,18 @@ void updateScreen(tab tabs[], twai_message_t messageArray[], int messageCount){
                 break;
             case 0x70f:
                 updateObject(tabs[TAB2].fields[TAB2_GEAR_POSITION_SOURCE_INDEX], (message.data[4]), GEAR_POSITION_SOURCE_CONVERSION, TAB2_GEAR_POSITION_SOURCE_INDEX, TAB2);
-                return;
+                break;
             case 0x714:
                 updateObject(tabs[TAB2].fields[TAB2_TANK_PRESSURE_INDEX], (message.data[0] << 8 | message.data[1]), TANK_PRESSURE_CONVERSION, TAB2_TANK_PRESSURE_INDEX, TAB2);
                 updateObject(tabs[TAB2].fields[TAB2_REGULATOR_PRESSURE_INDEX], (message.data[2] << 8 | message.data[3]), REGULATOR_PRESSURE_CONVERSION, TAB2_REGULATOR_PRESSURE_INDEX, TAB2);
                 updateObject(tabs[TAB2].fields[TAB2_BRAKE_BIAS_INDEX], (message.data[4] << 8 | message.data[5]), BRAKE_BIAS_CONVERSION, TAB2_BRAKE_BIAS_INDEX, TAB2);
-                return;
+                break;
         }
-            
+        //if any error, set the global variable errorCode so that warning can flash screen
         if((WaterTempError || VoltageError || OilPressureError || OilTempError)){
             errorCode = 1;
         }
+        //if no error, set the global variable to 0 to reset =
         else if(!(WaterTempError || VoltageError || OilPressureError || OilTempError)){
             errorCode = 0;
         }
@@ -318,6 +331,7 @@ void updateScreen(tab tabs[], twai_message_t messageArray[], int messageCount){
 
 void warning(tab tabs[]){
     int previousError = 0;
+    //assume no starting error
     while(true){
         if(previousError != errorCode){
             previousError = errorCode;
@@ -360,5 +374,6 @@ void warning(tab tabs[]){
 }
 
 void switchTabView(){
+    //switch to other tab
     lv_tabview_set_act(tabview, !(lv_tabview_get_tab_act(tabview)), LV_ANIM_OFF);
 }
